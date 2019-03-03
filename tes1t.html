@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link data-require="bootstrap-css@3.2.0" data-semver="3.2.0" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js" data-semver="1.2.17" data-require="angular.js@1.2.17"></script>
+    <link rel="stylesheet" href="style.css" />
+<script src="js/formatNumber.min.js"></script>
+<script src="js/crt.js"></script>
+  </head>
+
+  <body ng-app="app" ng-controller="MainCtrl as ctrl">
+    <h2>FCSA Number Demo</h2>
+    <p><a href="https://github.com/FCSAmerica/angular-fcsa-number">https://github.com/FCSAmerica/angular-fcsa-number</a></p>
+    <p>Here is a quick demo of the FCSA Number Angular directive that validates and formats numbers in text boxes. The text box will turn red when an invalid number is entered.</p>
+    <form name="form">
+      <div class="form-group" ng-class="{ 'has-error': form.numberNoOptions.$invalid }">
+        <label>Default Functionality with No Options</label>
+        <input type="text" fcsa-number="{  }" ng-model="ctrl.model.numberNoOptions" name="numberNoOptions" class="form-control" />
+        <p class="help-block">
+          Notice how the comma is removed when you enter the text box, and then it's re-added when you leave the textbox.
+        </p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': form.numberMax.$invalid }">
+        <label>fcsa-number="{ max: 10 }"</label>
+        <input type="text" fcsa-number="{ max: 10 }" ng-model="ctrl.model.numberMax" name="numberMax" class="form-control" />
+        <p class="help-block">
+          Any number above 10 will be marked invalid
+        </p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': form.numberMin.$invalid }">
+        <label>fcsa-number="{ min: 0 }"</label>
+        <input type="text" fcsa-number="{ min: 0 }" ng-model="ctrl.model.numberMin" name="numberMin" class="form-control" />
+        <p class="help-block">
+          Any number below 0 will be marked invalid
+        </p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': form.numberMaxDecimals.$invalid }">
+        <label>fcsa-number="{ maxDecimals: 2 }"</label>
+        <input type="text" fcsa-number="{ maxDecimals: 2 }" ng-model="ctrl.model.numberMaxDecimals" name="numberMaxDecimals" class="form-control" />
+        <p class="help-block">
+          Any number with more than 2 decimals will be marked invalid
+        </p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': form.numberMaxDigits.$invalid }">
+        <label>fcsa-number="{ maxDigits: 3 }"</label>
+        <input type="text" fcsa-number="{ maxDigits: 3 }" ng-model="ctrl.model.numberMaxDigits" name="numberMaxDigits" class="form-control" />
+        <p class="help-block">
+          Any number with more than 3 digits will be marked invalid
+        </p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': form.numberPrepend.$invalid }">
+        <label>fcsa-number="{ prepend: '$' }"</label>
+        <input type="text" fcsa-number="{ prepend: '$' }" ng-model="ctrl.model.numberPrepend" name="numberPrepend" class="form-control" />
+        <p class="help-block">
+          The '$' will be prepended to the number in the text box
+        </p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': form.numberAppend.$invalid }">
+        <label>fcsa-number="{ append: '%' }"</label>
+        <input type="text" fcsa-number="{ append: '%' }" ng-model="ctrl.model.numberAppend" name="numberPrepend" class="form-control" />
+        <p class="help-block">
+          The '%' will be appended to the number in the text box
+        </p>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error': form.numberMultipleOptions.$invalid }">
+        <label>fcsa-number="{ max: 10, min: 0, maxDecimals: 2 }"</label>
+        <input type="text" fcsa-number="{ max: 10, min: 0, maxDecimals: 2 }" ng-model="ctrl.model.numberMultipleOptions" name="numberMultipleOptions" class="form-control" />
+        <p class="help-block">
+          It's possible to set multiple options
+        </p>
+      </div>
+    </form>
+  </body>
+
+</html>
