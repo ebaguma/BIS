@@ -35,7 +35,7 @@ class BcBudgetrequests extends CActiveRecord
 		// will receive user inputs.
 
 		return array(
-			array('accountcode,ppform,requireddate,subject,justification', 'required'),
+			array('accountcode,ppform,subject,justification', 'required'),
 			array('requestor, section,accountcode,budget', 'numerical', 'integerOnly'=>true),
 			array('subject,justification,ppform', 'length', 'max'=>255),
 			array('budget','default','value'=>budget()),

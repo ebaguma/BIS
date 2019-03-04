@@ -53,12 +53,12 @@ echo CHtml::ajaxLink('View Popup', 'procurementSpending/popup',
 	<div class="row">
 		<?php echo $form->labelEx($model,'subject'); ?>
 		<?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'subject'); ?>
+		<?php //echo $form->error($model,'subject'); ?>
 	</div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'justification'); ?>
 		<?php echo $form->textField($model,'justification',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'justification'); ?>
+		<?php //echo $form->error($model,'justification'); ?>
 	</div>
 
 <table style='max-width:150px'>
@@ -79,20 +79,23 @@ echo CHtml::ajaxLink('View Popup', 'procurementSpending/popup',
 
 </td><td>
 	<div class="row">
-		<?php echo $form->labelEx($model,'requireddate'); ?>
-		<?php $this->widget('zii.widgets.jui.CJuiDatePicker',array(
+		<?php //echo $form->labelEx($model,'requireddate'); ?>
+		<?php 
+		$this->widget('zii.widgets.jui.CJuiDatePicker',array(
 		    'name'=>'BcBudgetrequests[requireddate]',
 		    // additional javascript options for the date picker plugin
 		    'options'=>array(
 		        'showAnim'=>'clip',
 				'dateFormat'=>'yy-mm-dd',
-				'yearRange'=>'2014:2015',
+				'yearRange'=>'2014:2015'
 		    ),
 		    'htmlOptions'=>array(
-		        'style'=>'height:20px;width:136px',
+				'style'=>'height:20px;width:136px;display:none',
+				'disabled'=>'true'
 		    ),
-		));   ?>
-		<?php echo $form->error($model,'requireddate'); ?>
+		));   
+		?>
+		<?php //echo $form->error($model,'requireddate'); ?>
 	</div>
 </td></tr></table>
 	<div class="row">

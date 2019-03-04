@@ -90,7 +90,7 @@ if(budget_locked()) { $this->renderPartial('/site/locked_warning'); }
 		     });    
 		 </script>
     <div class="grid-view row" id="StaffCosts_items"></div>
-	<input type='submit' value='Submit' />
+	<input id='submit' type='submit' value='Submit' />
 <?php $this->endWidget(); ?>
 </div><!-- form --></div>
 <?php $this->widget('ext.ScrollTop');  ?>
