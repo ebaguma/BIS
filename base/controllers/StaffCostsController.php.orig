@@ -64,143 +64,122 @@ class StaffCostsController extends Controller
 		?>
 	<script type="text/javascript" src="/assets/dc899cdc/jquery.js"></script>
 	<script type="text/javascript">
-	function test(dd, v) {
-		var w = document.getElementById('period' + dd).value == "Monthly" ? 12 : 1;
-		document.getElementById("price" + dd).innerHTML = accounting.formatNumber(document.getElementById("itemprice" + v).innerHTML);
-		document.getElementById("cur" + dd).innerHTML = document.getElementById("itemcur" + v).innerHTML;
-		if (isNaN(document.getElementById("qty" + dd).value)) document.getElementById("qty" + dd).value = 1;
-		document.getElementById("total" + dd).innerHTML = accounting.formatNumber(document.getElementById("qty" + dd).value * accounting.unformat(document.getElementById("price" + dd).innerHTML) * document.getElementById("itemrate" + v).innerHTML * w);
-		var maxd = document.getElementById('dkeeper').innerHTML;
-		var allt = 0;
-		for (i = 1; i <= maxd; i++) {
-			allt += parseFloat(accounting.unformat(document.getElementById("total" + i).innerHTML));
+		function test(dd, v) {
+			var w = document.getElementById('period' + dd).value == "Monthly" ? 12 : 1;
+			document.getElementById("price" + dd).innerHTML = accounting.formatNumber(document.getElementById("itemprice" + v).innerHTML);
+			document.getElementById("cur" + dd).innerHTML = document.getElementById("itemcur" + v).innerHTML;
+			if (isNaN(document.getElementById("qty" + dd).value)) document.getElementById("qty" + dd).value = 1;
+			document.getElementById("total" + dd).innerHTML = accounting.formatNumber(document.getElementById("qty" + dd).value * accounting.unformat(document.getElementById("price" + dd).innerHTML) * document.getElementById("itemrate" + v).innerHTML * w);
+			var maxd = document.getElementById('dkeeper').innerHTML;
+			var allt = 0;
+			for (i = 1; i <= maxd; i++) {
+				allt += parseFloat(accounting.unformat(document.getElementById("total" + i).innerHTML));
+			}
+			document.getElementById('alltotal').innerHTML = accounting.formatMoney(allt);
 		}
-		document.getElementById('alltotal').innerHTML = accounting.formatMoney(allt);
-		checkDate(dd);
-	}
 
-	function test2(dd) {
-		var w = document.getElementById('period' + dd).value == "Monthly" ? 12 : 1;
-		//document.getElementById("price"+dd).innerHTML=document.getElementById("itemprice"+v).innerHTML; 
-		if (isNaN(document.getElementById("qty" + dd).value)) document.getElementById("qty" + dd).value = 1;
-		//			alert();
-		document.getElementById("total" + dd).innerHTML = accounting.formatNumber(document.getElementById("qty" + dd).value * accounting.unformat(document.getElementById("price" + dd).innerHTML) * document.getElementById("itemrate" + document.getElementById("it" + dd).value).innerHTML * w);
-		var maxd = document.getElementById('dkeeper').innerHTML;
-		var allt = 0;
-		for (i = 1; i <= maxd; i++) {
-			allt += parseFloat(accounting.unformat(document.getElementById("total" + i).innerHTML));
+		function test2(dd) {
+			var w = document.getElementById('period' + dd).value == "Monthly" ? 12 : 1;
+			//document.getElementById("price"+dd).innerHTML=document.getElementById("itemprice"+v).innerHTML; 
+			if (isNaN(document.getElementById("qty" + dd).value)) document.getElementById("qty" + dd).value = 1;
+			//			alert();
+			document.getElementById("total" + dd).innerHTML = accounting.formatNumber(document.getElementById("qty" + dd).value * accounting.unformat(document.getElementById("price" + dd).innerHTML) * document.getElementById("itemrate" + document.getElementById("it" + dd).value).innerHTML * w);
+			var maxd = document.getElementById('dkeeper').innerHTML;
+			var allt = 0;
+			for (i = 1; i <= maxd; i++) {
+				allt += parseFloat(accounting.unformat(document.getElementById("total" + i).innerHTML));
+			}
+			document.getElementById('alltotal').innerHTML = accounting.formatMoney(allt);
+			checkDate(dd);
 		}
-		document.getElementById('alltotal').innerHTML = accounting.formatMoney(allt);
-	}
 
-	function checkDate(dd) {
-		var bgt = "<?php 
-			$budget = app()->db->createCommand("SELECT budgets.name as budget from budgets where id=" . app()->user->budget['id'] )->queryAll(); 
-			echo $budget[0]['budget']; ?>";
-		var sDate = new Date(bgt.substr(0,3) + " 01," + bgt.substr(4,4)).toISOString().slice(0,10);
-			
-		var cDate = document.getElementById('dateneeded' + dd).value;
-		var NewDate = new Date(cDate); //dd-mm-YYYY
-
-		var today = new Date(sDate);
-		
-		today.setHours(0,0,0,0);
-			if (cDate == '') {
-				alert('\t Capture Required Date (YYYY-MM-DD) \t ');
-				document.getElementById('additional-link').setAttribute("style", "display: none;");
-				document.getElementById('submit').disabled = true;
-
-			} else if (isDate(cDate) && (NewDate > today)) { 
-				document.getElementById('additional-link').style.display = null;
-				document.getElementById('submit').disabled = false;
-				document.getElementById('dateneeded' + dd).removeAttribute("style") 
-				}else{
-					alert('\t Required Date is Invalid (YYYY-MM-DD) \t ');
+		function checkDate(d) {
+			var cDate = document.getElementById('dateneeded' + d).value;
+			var NewDate = new Date(cDate); //dd-mm-YYYY
+			var today = new Date();
+			today.setHours(0,0,0,0);
+				if (cDate == '') {
+					alert('Please Capture Date Required (YYYY-MM-DD)');
 					document.getElementById('additional-link').setAttribute("style", "display: none;");
 					document.getElementById('submit').disabled = true;
-					document.getElementById('dateneeded' + dd).style.borderColor='red';
-				}
-		}
+				} else if (isDate(cDate) && (NewDate > today)) { 
+					document.getElementById('additional-link').style.display = null;
+					document.getElementById('submit').disabled = false; 
+					}else{
+						alert('\t Required Date is Invalid (YYYY-MM-DD) \t ');
+					document.getElementById('additional-link').setAttribute("style", "display: none;");
+					document.getElementById('submit').disabled = true;
+					}
+			}
 
-		function extractStart(bgt){
-			var sDate = bgt.substr(4,4) + "-" + bgt.substr(0,3) + "-01";
-			return sDate;
-			alert('\t Required Date is Invalid (YYYY-MM-DD) \t ' + sDate);
-		}
+			function formatDate(dDate) {
+				var d = new Date(date),
+					month = '' + (d.getMonth() + 1),
+					day = '' + d.getDate(),
+					year = d.getFullYear();
 
-		function formatDate(dDate) {
-			var d = new Date(date),
-				month = '' + (d.getMonth() + 1),
-				day = '' + d.getDate(),
-				year = d.getFullYear();
+				if (month.length < 2) month = '0' + month;
+				if (day.length < 2) day = '0' + day;
 
-			if (month.length < 2) month = '0' + month;
-			if (day.length < 2) day = '0' + day;
+				return [year, month, day].join('-');
+			}
 
-			return [year, month, day].join('-');
-		}
+		jQuery(function ($) {
+			var d = document.getElementById('dkeeper').innerHTML;
+			$("#additional-link").bind("click", function () { //document.getElementById('price"+d+"').innerHTML=this.class
+				d++;
+				var rown = d % 2 == 0 ? "even" : "odd";
+				$("#additional-inputs").append("\n<tr class=" + rown + " id=sel" + d + "><td>" + d + ".</td><td><select id='it" + d + "' onchange='test(" + d + ",this.value);' name=StaffCosts[item][] style='width:200px' ><option value=0> - select -</option><?php echo $csz?></select></td><td><input id='dateneeded" + d + "' name=StaffCosts[dateneeded][] placeholder='YYYY-MM-DD' onBlur='checkDate(" + d + ")' /></td><td style='text-align:right' id=price" + d + "></td><td id=cur" + d + "></td><td><select onChange='test2(" + d + ")'  id='period" + d + "' name=StaffCosts[period][]><option value=Annually>Annually</option><option value=Monthly>Monthly</option></select></td><td><input id=qty" + d + " onKeyUp='test2(" + d + ");' onChange='test2(" + d + ")'  style='width:60px' type=number value=1 name=StaffCosts[quantity][]></td><td style='text-align:right' id=total" + d + "></td></tr>");
+				document.getElementById('dkeeper').innerHTML = d;
+				document.getElementById('submit').disabled = true;
+			});
 
-	jQuery(function ($) {
-
-		var d = document.getElementById('dkeeper').innerHTML;
-		$("#additional-link").bind("click", function () { //document.getElementById('price"+d+"').innerHTML=this.class
-			d++;
-			var rown = d % 2 == 0 ? "even" : "odd";
-			$("#additional-inputs").append("\n<tr class=" + rown + " id=sel" + d + "><td>" + d + ".</td><td><select id='it" + d + "' onChange='test(" + d + ",this.value);' name=StaffCosts[item][] style='width:200px' ><option value=0> - select -</option><?php echo $csz?></select></td><td><input id='dateneeded" + d + "' name=StaffCosts[dateneeded][] placeholder='YYYY-MM-DD' onChange='checkDate(" + d + ")' /></td><td style='text-align:right' id=price" + d + "></td><td id=cur" + d + "></td><td><select onChange='test2(" + d + ")' id='period" + d + "' name=StaffCosts[period][]><option value=Annually>Annually</option><option value=Monthly>Monthly</option></select></td><td><input id=qty" + d + " onChange='test2(" + d + ")'  style='width:60px' type=number value=1 name=StaffCosts[quantity][]></td><td style='text-align:right' id=total" + d + "></td></tr>");
-			document.getElementById('dkeeper').innerHTML = d;
-			document.getElementById('submit').disabled = true;
+			$("#additional-linkr").bind("click", function () {
+				$("#sel" + d).remove();
+				d--;
+				document.getElementById('dkeeper').innerHTML = d;
+				document.getElementById('additional-link').style.display = null;
+				document.getElementById('submit').disabled = false;
+			});
 		});
 
-		$("#additional-linkr").bind("click", function () {
-			$("#sel" + d).remove();
-			d--;
-			document.getElementById('dkeeper').innerHTML = d;
-			document.getElementById('additional-link').style.display = null;
-			document.getElementById('submit').disabled = false;
-		});
-	});
-
-	function isDate(txtDate)
-	{
-		var currVal = txtDate;
-		if(currVal == '')
-			return false;
-
-		var rxDatePattern = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/; //Declare Regex
-		var dtArray = currVal.match(rxDatePattern); // is format OK?
-
-		if (dtArray == null) 
-			return false;
-
-		//Checks for mm/dd/yyyy format.
-		dtMonth = dtArray[1];
-		dtDay= dtArray[3];
-		dtYear = dtArray[5];        
-
-		if (dtMonth < 1 || dtMonth > 12) 
-			return false;
-		else if (dtDay < 1 || dtDay> 31) 
-			return false;
-		else if ((dtMonth==4 || dtMonth==6 || dtMonth==9 || dtMonth==11) && dtDay ==31) 
-			return false;
-		else if (dtMonth == 2) 
+		function isDate(txtDate)
 		{
-			var isleap = (dtYear % 4 == 0 && (dtYear % 100 != 0 || dtYear % 400 == 0));
-			if (dtDay> 29 || (dtDay ==29 && !isleap)) 
-					return false;
+			var currVal = txtDate;
+			if(currVal == '')
+				return false;
+
+			var rxDatePattern = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/; //Declare Regex
+			var dtArray = currVal.match(rxDatePattern); // is format OK?
+
+			if (dtArray == null) 
+				return false;
+
+			//Checks for mm/dd/yyyy format.
+			dtMonth = dtArray[1];
+			dtDay= dtArray[3];
+			dtYear = dtArray[5];        
+
+			if (dtMonth < 1 || dtMonth > 12) 
+				return false;
+			else if (dtDay < 1 || dtDay> 31) 
+				return false;
+			else if ((dtMonth==4 || dtMonth==6 || dtMonth==9 || dtMonth==11) && dtDay ==31) 
+				return false;
+			else if (dtMonth == 2) 
+			{
+				var isleap = (dtYear % 4 == 0 && (dtYear % 100 != 0 || dtYear % 400 == 0));
+				if (dtDay> 29 || (dtDay ==29 && !isleap)) 
+						return false;
+			}
+			return true;
 		}
-		return true;
-	}
 
 		
 	</script>
 	<div id=idbudget style='display:none;'>
-		<?php  
-		//$bgt = app()->db->createCommand("SELECT name from budgets where  budget=" . app()->user->budget['id'] )->queryAll(); 
-		echo $jbudget; 
-		?>
-	</div> <a id="additional-link" href="#" style="color:blue"><strong>Add Item</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="additional-linkr" href="#" style="color:red"><strong>Remove Last Item</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To Remove Existing Item, Set Quantity to <strong>ZERO</strong>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">Date Required Format <strong>(YYYY-MM-DD)</strong> All Digits</span>
+		<?php  echo $jbudget; ?>
+	</div> <a id="additional-link" href="#">Add Item</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="additional-linkr" href="#" style="color:red">Remove Last Item</a>. To remove any Item, set its quantity to <strong>0</strong>
 	<table class=items style='widthi:900px'>
 		<tr>
 			<th>No.</th>
@@ -226,7 +205,6 @@ class StaffCostsController extends Controller
 		$d++;
 		$www=$dt[price]*$dt[quantity]*$dt['exrate']*($dt[period]=='Annually' ? 1 : 12);
 		$bigtot+=$www;
-
 		?>
 				<tr class=<?php echo $cl?> id=sel
 					<?php echo $d;?>>
@@ -234,12 +212,12 @@ class StaffCostsController extends Controller
 							<?php echo $d;?>
 						</td>
 						<td>
-							<select id='it<?php echo $d; ?>' onChange='test(<?php echo $d; ?>,this.value);' name=StaffCosts[item][]>
+							<select id='it<?php echo $d; ?>' onblur='test(<?php echo $d; ?>,this.value);' name=StaffCosts[item][]>
 								<?php echo $cz1?>
 							</select>
 						</td>
 						<td>
-							<input id='dateneeded<?php echo $d; ?>' value=<?php echo $dt[dateneeded] ?> name=StaffCosts[dateneeded][] onChange='checkDate(<?php echo $d; ?>)'  />
+							<input id='dateneeded<?php echo $d; ?>' value=<?php echo $dt[dateneeded] ?> name=StaffCosts[dateneeded][] onBlur='checkDate(<?php echo $d; ?>)' style='width:200px' />
 						</td>
 						<td style='text-align:right' id=price<?php echo $d;?>>
 							<?php echo number_format($dt[price])?>
@@ -248,14 +226,16 @@ class StaffCostsController extends Controller
 							<?php echo $dt[currency];?>
 						</td>
 						<td>
-							<select onChange='test2(<?php echo $d; ?>)' id='period<?php echo $d;?>' name=StaffCosts[period][]>
+							<select onChange='test2(<?php echo $d;?>)' id='period<?php echo $d;?>' name=StaffCosts[period][]>
 								<option value='Annually' <?php if($dt[period]=='Annually' ) echo "SELECTED=SELECTED"; ?>>Annually</option>
 								<option value='Monthly' <?php if($dt[period]=='Monthly' ) echo "SELECTED=SELECTED"; ?>>Monthly</option>
 							</select>
 						</td>
 						<td>
-							<input id='qty<?php echo $d;?>' onChange='test2(<?php echo $d; ?>)' type=number style='width:60px' 
-							value=<?php echo $dt[quantity]?> name=StaffCosts[quantity][] /></td>
+							<input id=qty<?php echo $d;?> onKeyUp='test2(
+							<?php echo $d;?>)' onChange='test2(
+								<?php echo $d;?>)' type=number style='width:60px' value=
+									<?php echo $dt[quantity]?> name=StaffCosts[quantity][] /></td>
 						<td style='text-align:right' id=total<?php echo $d;?>>
 							<?php echo number_format($www)?>
 						</td>
@@ -292,7 +272,7 @@ class StaffCostsController extends Controller
 								"quantity"		=>	$rec['quantity'],
 							);
 			GeneralRepository::insertSeveral('staff_costs',  array($newrec));
-			$scyy=Yii::app()->db->createCommand("SELECT last_insert_id() a from staff_costs")->queryAll();
+$scyy=Yii::app()->db->createCommand("SELECT last_insert_id() a from staff_costs")->queryAll();
 						$newbudget = array(
 							"budget" 		=>	8,
 							"item"			=>	$rec['item'],
