@@ -149,14 +149,14 @@ class BcReallocationController extends Controller
 				$m2->attributes=$as;
 				if(!$m2->save()) dump($m2->getErrors());
 				
-				 $this->redirect(array('view','id'=>$model->id));
-
+				$this->redirect(array('view','id'=>$model->id));
 			}
 				
 		}
 
-		 $this->render('create',array('model'=>$model,));
-
+		$this->render('create',array(
+			'model'=>$model,
+		));
 	}
 
 	/**
@@ -175,11 +175,12 @@ class BcReallocationController extends Controller
 		{
 			$model->attributes=$_POST['BcReallocation'];
 			if($model->save())
-				 $this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('update',array('model'=>$model,));
-
+		$this->render('update',array(
+			'model'=>$model,
+		));
 	}
 
 	/**

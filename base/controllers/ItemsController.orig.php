@@ -116,14 +116,13 @@ echo "<tr class=".$rown." id=sel".$i."><td>".($i+1).".</td><td><input id='it".$i
 	}
 
 	public function actionItem() {
-		$cs=$_REQUEST[costcentre2] ? $_REQUEST[costcentre2] : $_REQUEST[costcentre];
+		$cs=$_REQUEST[costcentre] ? $_REQUEST[costcentre] : $_REQUEST[costcentre2];
 		$data=CHtml::listData(Accountcodes::model()->findAll("accountcode regexp '^".$cs."[0-9]{4}$' order by item asc"),'id','item');
 		echo CHtml::tag('option', array('value'=>$value),CHtml::encode('- select -'),true);
 		foreach($data as $value=>$name)		{
 			echo CHtml::tag('option', array('value'=>$value),CHtml::encode($name),true);
 		}
 	}
-	
 	public function actionItem2() {
 		$ac=$_REQUEST['accountcode'] ? $_REQUEST['accountcode'] : $_REQUEST['accountcode2'];
 		$data=CHtml::listData(Items::model()->findAll("accountcode='".$ac."' order by name asc"),'id','name');

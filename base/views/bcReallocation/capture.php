@@ -224,7 +224,9 @@ function reac() {
 		echo $form->textArea($model,'justification',array('style'=>'width:270px')); 
 		?>
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Submit Re-Allocation Request' : 'Save'); ?>
+	<?php echo CHtml::resetButton('Reset Form',array('style'=>'color:red; width:100px; height:25px;')); ?>&nbsp;&nbsp;&nbsp;
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Submit Re-Allocation' : 'Save',array('style'=>'color:blue; width:150px; height:25px')); ?>
+		
 	</div>
 <?php $this->endWidget(); ?>
 </div><!-- form --></div>
