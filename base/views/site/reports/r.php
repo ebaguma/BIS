@@ -20,13 +20,13 @@ $st=!empty($_REQUEST['c']) ? "none" : "block";
 
 switch ($_REQUEST['p']) {
 	case 	"all":
-	$sql ="accountcode regexp '^4[0-9]$' or accountcode regexp '^10$'";
-	break;
+		$sql ="accountcode regexp '^4[0-9]$' or accountcode regexp '^10$'";
+		break;
 	case 	"42":
-	$sql ="accountcode regexp '^".$_REQUEST['p']."$' or accountcode regexp '^43$'";
-	break;
+		$sql ="accountcode regexp '^".$_REQUEST['p']."$' or accountcode regexp '^43$'";
+		break;
 	default:
-	$sql ="accountcode regexp '^".$_REQUEST['p']."$'";
+		$sql ="accountcode regexp '^".$_REQUEST['p']."$'";
 }
 $rd='realdept';
 $cs=Yii::app()->db->createCommand("select * from accountcodes where report=1 and $sql")->queryAll();
@@ -38,13 +38,21 @@ if(is_dept_head() && !corporate_report()) {
 	$ee=Sections::model()->findByPk(user()->dept[id]);
 	$depts=app()->db->CreateCommand("SELECT * from sections where department in (select department from sections where  id='".user()->dept[id]."')")->queryAll();
 	$rd='dept';
+} else{
+	$ad=" where id=(select department from sections where id='".user()->dept[id]."')";
+	$bname="Section";
+	$depts=app()->db->CreateCommand("SELECT * from sections where   id='". user()->dept[id] . "'")->queryAll();
+	$rd='dept';
 }
+
+/***
 if(!is_dept_head() && !corporate_report())  {
 	$ad=" where id=(select department from sections where id='".user()->dept[id]."')";
 	$bname="Section";
 	$depts=app()->db->CreateCommand("SELECT * from sections where   id='".user()->dept[id]."'")->queryAll();
 	$rd='dept';
 }
+***/
 
 ?>
 <style>
@@ -98,7 +106,7 @@ foreach($codes as $cd) {
 	$linetot=0;$ctr++;
 	$dctr=0;
 	foreach($depts as $dep) {
-		$bdgt=Yii::app()->db->createCommand("select sum(amount) a from v_budget where accountcode ='".$cd[id]."' and budget='".user()->budget['id']."' and $rd='".$dep['id']."' $ad2")->queryAll();
+		$bdgt=Yii::app()->db->createCommand("select sum(amount) a from v_budget where accountcode ='".$cd[id]."' and budget='".user()->budget['id']."' and dept = " . $dep['id'] )->queryAll();
 		//echo "select sum(amount) a from v_budget where accountcode ='".$cd[id]."' and budget='".user()->budget['id']."' and $rd='".$dep['id']."' $ad2";
 		$total += $bdgt[0][a];
 		$linetot +=$bdgt[0][a];
@@ -769,9 +777,14 @@ function rgeneral() {
 }
 
 function report_440006() {
-
-	$mysecs=Yii::app()->db->createCommand("SELECT distinct section,itemname from v_subsistence where budget='".user()->budget['id']."' and  accountcode='".$_REQUEST['c']."' order by sectionname asc")->queryAll();
-echo "<h2> Details for ".$mysecs[0][itemname]."</h2>";
+	if(is_dept_head() && !corporate_report()){
+		$ad=" and deptid=(select department from sections where id='".user()->dept[id]."')";
+		$mysecs=Yii::app()->db->createCommand("SELECT distinct section,itemname from v_subsistence where budget='".user()->budget['id']."' and  accountcode='".$_REQUEST['c']."' $ad order by sectionname asc")->queryAll();
+	}else{
+		$ad=" and section='".user()->dept[id]."'";
+		$mysecs=Yii::app()->db->createCommand("SELECT distinct section,itemname from v_subsistence where budget='".user()->budget['id']."' and  accountcode='".$_REQUEST['c']."' $ad order by sectionname asc")->queryAll();
+	}
+	echo "<h2> Details for ".$mysecs[0][itemname]."</h2>";
 	foreach($mysecs as $mysec) {
 		$cs=Yii::app()->db->createCommand("select * from v_subsistence where budget='".user()->budget['id']."' and section='".$mysec[section]."' and accountcode='".$_REQUEST['c']."'")->queryAll();
 		echo "<h3>".$cs[0][dept].": ".$cs[0][sectionname]."</h3>";

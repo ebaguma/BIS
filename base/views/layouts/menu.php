@@ -96,16 +96,16 @@
 				array('label'=>'Admin', 'url'=>array('#'),
 				'items'=>
 					array(
-            array('label'=>'Settings', 	'url'=>array('settings/admin'),'visible'=>(is_sys_admin())),
+						array('label'=>'Settings', 	'url'=>array('settings/admin'),'visible'=>(is_sys_admin())),
 						array('label'=>'Users', 			'url'=>array('users/admin'),'visible'=>(is_sys_admin())),
 						array('label'=>'User Roles', 		'url'=>array('usersRoles/admin')),
 						array('label'=>'Designations', 	'url'=>array('designations/admin')),
 						array('label'=>'Departments', 	'url'=>array('dept/admin')),
 						array('label'=>'Sections', 		'url'=>array('sections/admin')),
 						array('label'=>'Sub Sections', 	'url'=>array('subsections/admin')),
-            array('label'=>'__', 		'url'=>array('#'),'onclick'=>'return false'),
-            array('label'=>'Merge Section Budgets', 	'url'=>array('settings/move1')),
-            array('label'=>'Post Budget Addition', 	'url'=>array('settings/budgetaddition')),
+						array('label'=>'__', 		'url'=>array('#'),'onclick'=>'return false'),
+						array('label'=>'Merge Section Budgets', 	'url'=>array('settings/move1')),
+						array('label'=>'Post Budget Addition', 	'url'=>array('settings/budgetaddition')),
         			),'visible'=>is_sys_admin(),'linkOptions'=>array('onclick'=>'return false'),
 
 				),

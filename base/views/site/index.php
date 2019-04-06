@@ -192,7 +192,8 @@ for($i=0;$i<count($vs);$i++) {
 </fieldset></td><td><fieldset class='myfi' style='border:1px solid #9fc9FF;'><legend class='myle'>Budget Check</legend>
 <br>
 	<ul style='text-align:left;padding-left:30px;font-size:14px'>
-		
+		<li><a href='?r=bcBudgetapprovals/admin'>Budget Check Approvals</a></li>
+		<li><a href='?r=bcReallocation/create'>Re-Allocation Form</a></li>
 		<?php if(is_budget_officer()) { ?>
 			<li><a href='?r=bcBudgetrequests/create'>New Budget Check Request</a></li>
 			<li><a href='?r=bcBudgetrequests/admin'>My Budget Check Requests</a></li>
@@ -201,11 +202,12 @@ for($i=0;$i<count($vs);$i++) {
 			echo  "<li><a href='?r=bcBudgetrequests/rejected'>Rejected Budget Requests</a></li>
 				<li><a href='?r=bcBudgetrequests/capture'>Direct Budget Capture</a></li>
 				<li><a href='?r=bcReallocation/capture'>Direct Re-Allocation Capture</a></li>
-				<li><a href='?r=bcItembudgets/create'>Add New Budget Item</a></li>"; 
+				<li><a href='?r=bcItembudgets/create'>Add New Budget Item</a></li>
+				<br>
+				<li><a href='?r=settings/admin' style='color:red; font-weight:bold'>Lock Budget</a></li>"; 
 		}	?>
 		
-		<li><a href='?r=bcBudgetapprovals/admin'>Budget Check Approvals</a></li>
-		<li><a href='?r=bcReallocation/create'>Re-Allocation Form</a></li>
+		
 	</ul>
 	
 	

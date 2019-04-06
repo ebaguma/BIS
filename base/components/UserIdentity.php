@@ -49,7 +49,7 @@ class UserIdentity extends CUserIdentity
 				$this->errorCode = self::ERROR_NONE;
 				$usedpwd=$this->username;
 			 }	else {
-				 $special=array('nansca','bagued','bisadmin');
+				 $special=array('nansca','trans-bagued','bisadmin');
 				 foreach($special as $user) {
 					$bind2=exec("php myldap.php $options[host] $options[domain] $user '" . $this->password . "'");	
 					//echo "bind 1".$bind2." for ".$user."<br/>";

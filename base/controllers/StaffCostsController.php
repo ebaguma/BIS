@@ -10,6 +10,19 @@ class StaffCostsController extends Controller
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
+
+	function isDateRequired($date){
+		$dr=Yii::app()->db->createCommand("SELECT budgets.name as bname from budgets where  id =" . app()->user->budget['id'] )->queryAll();
+		$name = $dr[0][bname];
+		$dd = date("Y-m-d", strtotime(substr($name,4,4) . "-JUN-30"));
+		//return date("Y-m-d", $dd);
+		if ($date > $dd){
+			return $date;
+		} else {
+			return (substr($name,4,4) . "-09-30");
+		}
+	}
+
 	public function accessRules()
 	{
 		$a=array('adminn');
@@ -122,23 +135,23 @@ class StaffCostsController extends Controller
 				}
 		}
 
-		function extractStart(bgt){
-			var sDate = bgt.substr(4,4) + "-" + bgt.substr(0,3) + "-01";
-			return sDate;
-			alert('\t Required Date is Invalid (YYYY-MM-DD) \t ' + sDate);
-		}
+	function extractStart(bgt){
+		var sDate = bgt.substr(4,4) + "-" + bgt.substr(0,3) + "-01";
+		return sDate;
+		alert('\t Required Date is Invalid (YYYY-MM-DD) \t ' + sDate);
+	}
 
-		function formatDate(dDate) {
-			var d = new Date(date),
-				month = '' + (d.getMonth() + 1),
-				day = '' + d.getDate(),
-				year = d.getFullYear();
+	function formatDate(dDate) {
+		var d = new Date(date),
+			month = '' + (d.getMonth() + 1),
+			day = '' + d.getDate(),
+			year = d.getFullYear();
 
-			if (month.length < 2) month = '0' + month;
-			if (day.length < 2) day = '0' + day;
+		if (month.length < 2) month = '0' + month;
+		if (day.length < 2) day = '0' + day;
 
-			return [year, month, day].join('-');
-		}
+		return [year, month, day].join('-');
+	}
 
 	jQuery(function ($) {
 
@@ -194,10 +207,14 @@ class StaffCostsController extends Controller
 
 		
 	</script>
+
+	
+
 	<div id=idbudget style='display:none;'>
 		<?php  
 		//$bgt = app()->db->createCommand("SELECT name from budgets where  budget=" . app()->user->budget['id'] )->queryAll(); 
 		echo $jbudget; 
+
 		?>
 	</div> <a id="additional-link" href="#" style="color:blue"><strong>Add Item</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="additional-linkr" href="#" style="color:red"><strong>Remove Last Item</strong></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To Remove Existing Item, Set Quantity to <strong>ZERO</strong>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">Date Required Format <strong>(YYYY-MM-DD)</strong> All Digits</span>
@@ -213,7 +230,8 @@ class StaffCostsController extends Controller
 			<th style='text-align:right'>Total</th>
 		</tr>
 		<tbody id="additional-inputs">
-			<?php
+	<?php
+
 	$d=$bigtot=0;	
 	$dat=Yii::app()->db->createCommand("SELECT * from v_staff_costs where  accountcode=".$_REQUEST['StaffCosts']['accountcode']." and budget=".Yii::app()->user->budget['id']." and dept='".user()->dept['id']."'")->queryAll();
 //	echo "SELECT * from v_staff_costs where  accountcode=".$_REQUEST['StaffCosts']['accountcode']." and budget=".Yii::app()->user->budget['id']." and dept='".user()->dept['id']."'";
@@ -239,7 +257,7 @@ class StaffCostsController extends Controller
 							</select>
 						</td>
 						<td>
-							<input id='dateneeded<?php echo $d; ?>' value=<?php echo $dt[dateneeded] ?> name=StaffCosts[dateneeded][] onChange='checkDate(<?php echo $d; ?>)'  />
+							<input id='dateneeded<?php echo $d; ?>' value=<?php echo $this->isDateRequired($dt[dateneeded]); ?> name=StaffCosts[dateneeded][] onChange='checkDate(<?php echo $d; ?>)'  />
 						</td>
 						<td style='text-align:right' id=price<?php echo $d;?>>
 							<?php echo number_format($dt[price])?>
@@ -312,6 +330,10 @@ class StaffCostsController extends Controller
 			//print_r($newbudget);
 		}
 	}
+
+	
+	
+	
 	public function actionCreate()
 	{
 //		echo "<pre>";print_r($_POST['StaffCosts']); exit;	

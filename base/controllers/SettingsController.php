@@ -27,7 +27,7 @@ class SettingsController extends Controller
 	public function accessRules()
 	{
 		$a=array('adminn');
-		if(is_sys_admin()) {
+		if(is_sys_admin() || is_sat() || is_pbfo()) {
 			$a[]=Yii::app()->user->name;
 		}
 		return array(
