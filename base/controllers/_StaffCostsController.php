@@ -62,7 +62,7 @@ class StaffCostsController extends Controller
 		}
 		$jarray .="<div id='itemprice0'></div><div id='itemcur0'>UGX</div><div id='itemrate0'>1</div>";
 		?>
-	<script type="text/javascript" src="/bis/assets/dc899cdc/jquery.js"></script>
+	<script type="text/javascript" src="/assets/dc899cdc/jquery.js"></script>
 	<script type="text/javascript">
 		function test(dd, v) {
 			var w = document.getElementById('period' + dd).value == "Monthly" ? 12 : 1;

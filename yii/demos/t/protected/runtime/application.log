@@ -1,0 +1,1586 @@
+2014/08/11 11:56:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('user')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=user
+---
+2014/08/11 12:40:45 [error] [exception.CException] exception 'CException' with message 'Property "Users.paswd" is not defined.' in C:\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\htdocs\yii\framework\db\ar\CActiveRecord.php(161): CComponent->__set('paswd', 'd41d8cd98f00b20...')
+#1 C:\htdocs\yii\demos\t\protected\controllers\UsersController.php(73): CActiveRecord->__set('paswd', 'd41d8cd98f00b20...')
+#2 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): UsersController->actionCreate()
+#3 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/create')
+#13 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=users/create
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=users/create
+---
+2014/08/11 14:00:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "contact".' in C:\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CController.php(270): CController->missingAction('contact')
+#1 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('contact')
+#2 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/contact')
+#3 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=users/contact
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=site/page&view=about
+---
+2014/08/11 14:00:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "contact".' in C:\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CController.php(270): CController->missingAction('contact')
+#1 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('contact')
+#2 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/contact')
+#3 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=users/contact
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=site/page&view=about
+---
+2014/08/11 17:45:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\htdocs\yii\demos\t\protected\controllers\UsersController.php:158
+Stack trace:
+#0 C:\htdocs\yii\demos\t\protected\controllers\UsersController.php(55): UsersController->loadModel('1')
+#1 [internal function]: UsersController->actionView('1')
+#2 C:\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#3 C:\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(UsersController), Object(ReflectionMethod), Array)
+#4 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/view')
+#14 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=users/view&id=1
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=users
+---
+2014/08/11 18:31:35 [error] [php] include(User.php): failed to open stream: No such file or directory (C:\htdocs\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\htdocs\yii\demos\t\protected\components\UserIdentity.php(37): spl_autoload_call()
+#1 C:\htdocs\yii\demos\t\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#2 C:\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate()
+#3 C:\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#4 C:\htdocs\yii\framework\base\CModel.php(159): CInlineValidator->validate()
+#5 C:\htdocs\yii\demos\t\protected\controllers\SiteController.php(94): LoginForm->validate()
+#6 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#7 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\htdocs\yii\framework\web\CController.php(286): SiteController->runAction()
+#9 C:\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#10 C:\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#11 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\htdocs\yii\demos\t\index.php(15): CWebApplication->run()
+REQUEST_URI=/yii/demos/t/index.php?r=site/login
+in C:\htdocs\yii\demos\t\protected\components\UserIdentity.php (37)
+in C:\htdocs\yii\demos\t\protected\models\LoginForm.php (52)
+in C:\htdocs\yii\demos\t\protected\controllers\SiteController.php (94)
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/11 18:33:35 [error] [exception.CException] exception 'CException' with message 'Property "Users.password" is not defined.' in C:\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('password')
+#1 C:\htdocs\yii\demos\t\protected\components\UserIdentity.php(40): CActiveRecord->__get('password')
+#2 C:\htdocs\yii\demos\t\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#3 C:\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 C:\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 C:\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 C:\htdocs\yii\demos\t\protected\controllers\SiteController.php(94): CModel->validate()
+#7 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#8 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#12 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=site/login
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=site/login
+---
+2014/08/11 18:33:59 [error] [exception.CException] exception 'CException' with message 'Property "Users.password" is not defined.' in C:\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('password')
+#1 C:\htdocs\yii\demos\t\protected\components\UserIdentity.php(40): CActiveRecord->__get('password')
+#2 C:\htdocs\yii\demos\t\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#3 C:\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 C:\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 C:\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 C:\htdocs\yii\demos\t\protected\controllers\SiteController.php(94): CModel->validate()
+#7 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#8 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#12 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=site/login
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=site/login
+---
+2014/08/11 18:34:10 [error] [exception.CException] exception 'CException' with message 'Property "Users.password" is not defined.' in C:\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('password')
+#1 C:\htdocs\yii\demos\t\protected\components\UserIdentity.php(40): CActiveRecord->__get('password')
+#2 C:\htdocs\yii\demos\t\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#3 C:\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 C:\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 C:\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 C:\htdocs\yii\demos\t\protected\controllers\SiteController.php(94): CModel->validate()
+#7 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#8 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#12 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=site/login
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=site/login
+---
+2014/08/11 18:35:36 [error] [exception.CException] exception 'CException' with message 'Property "Users.title" is not defined.' in C:\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('title')
+#1 C:\htdocs\yii\demos\t\protected\components\UserIdentity.php(45): CActiveRecord->__get('title')
+#2 C:\htdocs\yii\demos\t\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#3 C:\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 C:\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 C:\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 C:\htdocs\yii\demos\t\protected\controllers\SiteController.php(94): CModel->validate()
+#7 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#8 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#12 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=site/login
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=site/login
+---
+2014/08/11 18:37:50 [error] [exception.CException] exception 'CException' with message 'Property "Users.title" is not defined.' in C:\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('title')
+#1 C:\htdocs\yii\demos\t\protected\components\UserIdentity.php(45): CActiveRecord->__get('title')
+#2 C:\htdocs\yii\demos\t\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#3 C:\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 C:\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 C:\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 C:\htdocs\yii\demos\t\protected\controllers\SiteController.php(94): CModel->validate()
+#7 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#8 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#12 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=site/login
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=site/login
+---
+2014/08/11 18:41:29 [error] [exception.CException] exception 'CException' with message 'Property "Users.title" is not defined.' in C:\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('title')
+#1 C:\htdocs\yii\demos\t\protected\components\UserIdentity.php(45): CActiveRecord->__get('title')
+#2 C:\htdocs\yii\demos\t\protected\models\LoginForm.php(52): UserIdentity->authenticate()
+#3 C:\htdocs\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 C:\htdocs\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 C:\htdocs\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 C:\htdocs\yii\demos\t\protected\controllers\SiteController.php(94): CModel->validate()
+#7 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#8 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#12 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#13 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=site/login
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=site/login
+---
+2014/08/11 18:42:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/admin')
+#9 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=users/admin
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=users/create
+---
+2014/08/11 18:42:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/admin')
+#9 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=users/admin
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=users
+---
+2014/08/11 18:42:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/admin')
+#9 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=users/admin
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=users
+---
+2014/08/11 19:01:56 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.title" is not defined.' in C:\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\htdocs\yii\framework\web\auth\CWebUser.php(146): CComponent->__get('title')
+#1 C:\htdocs\yii\demos\t\protected\views\layouts\main.php(37): CWebUser->__get('title')
+#2 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#3 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#4 C:\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#5 C:\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#6 C:\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#7 C:\htdocs\yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#8 C:\htdocs\yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#9 C:\htdocs\yii\demos\t\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#10 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#11 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#12 C:\htdocs\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#13 C:\htdocs\yii\demos\t\protected\controllers\SiteController.php(32): CController->render('index')
+#14 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#15 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#17 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#19 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#20 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/demos/t/index.php
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=site/login
+---
+2014/08/11 19:34:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('template/admin')
+#9 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=template/admin
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=template/view&id=2
+---
+2014/08/11 19:34:26 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bis`.`template`, CONSTRAINT `template_ibfk_2` FOREIGN KEY (`owner`) REFERENCES `dept` (`id`)). The SQL statement executed was: INSERT INTO `template` (`name`, `entity`, `owner`, `rights`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\htdocs\yii\demos\t\protected\controllers\TemplateController.php (73)
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/11 19:34:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bis`.`template`, CONSTRAINT `template_ibfk_2` FOREIGN KEY (`owner`) REFERENCES `dept` (`id`)). The SQL statement executed was: INSERT INTO `template` (`name`, `entity`, `owner`, `rights`) VALUES (:yp0, :yp1, :yp2, :yp3)' in C:\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\htdocs\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 C:\htdocs\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 C:\htdocs\yii\demos\t\protected\controllers\TemplateController.php(73): CActiveRecord->save()
+#3 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): TemplateController->actionCreate()
+#4 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('template/create')
+#14 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=template/create
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=template/create
+---
+2014/08/11 19:54:21 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.dept" is not defined.' in C:\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\htdocs\yii\framework\db\schema\CDbCriteria.php(160): CComponent->__set('dept', 'id')
+#1 C:\htdocs\yii\framework\db\schema\CDbCommandBuilder.php(585): CDbCriteria->__construct(Array)
+#2 C:\htdocs\yii\framework\db\ar\CActiveRecord.php(1469): CDbCommandBuilder->createCriteria(Array, Array)
+#3 C:\htdocs\yii\demos\t\protected\views\template\_form.php(38): CActiveRecord->findAll(Array)
+#4 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#6 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#7 C:\htdocs\yii\demos\t\protected\views\template\create.php(18): CController->renderPartial('_form', Array)
+#8 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#9 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#10 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#11 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 C:\htdocs\yii\demos\t\protected\controllers\TemplateController.php(79): CController->render('create', Array)
+#13 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): TemplateController->actionCreate()
+#14 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#23 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('template/create')
+#24 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#25 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#26 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=template/create
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=template
+---
+2014/08/11 19:57:13 [error] [php] include(ProductType.php): failed to open stream: No such file or directory (C:\htdocs\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\htdocs\yii\demos\t\protected\views\template\_form.php(41): spl_autoload_call()
+#1 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#2 C:\htdocs\yii\framework\web\CBaseController.php(95): TemplateController->renderInternal()
+#3 C:\htdocs\yii\framework\web\CController.php(869): TemplateController->renderFile()
+#4 C:\htdocs\yii\demos\t\protected\views\template\create.php(18): TemplateController->renderPartial()
+#5 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#6 C:\htdocs\yii\framework\web\CBaseController.php(95): TemplateController->renderInternal()
+#7 C:\htdocs\yii\framework\web\CController.php(869): TemplateController->renderFile()
+#8 C:\htdocs\yii\framework\web\CController.php(782): TemplateController->renderPartial()
+#9 C:\htdocs\yii\demos\t\protected\controllers\TemplateController.php(79): TemplateController->render()
+#10 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): TemplateController->actionCreate()
+#11 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): TemplateController->runAction()
+#13 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): TemplateController->filterAccessControl()
+#16 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\htdocs\yii\framework\web\CController.php(265): TemplateController->runActionWithFilters()
+#19 C:\htdocs\yii\framework\web\CWebApplication.php(282): TemplateController->run()
+#20 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\htdocs\yii\demos\t\index.php(15): CWebApplication->run()
+REQUEST_URI=/yii/demos/t/index.php?r=template/create
+in C:\htdocs\yii\demos\t\protected\views\template\_form.php (41)
+in C:\htdocs\yii\demos\t\protected\views\template\create.php (18)
+in C:\htdocs\yii\demos\t\protected\controllers\TemplateController.php (79)
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/12 07:59:02 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#9 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 07:59:07 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#9 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity
+---
+2014/08/12 08:02:02 [error] [exception.CException] exception 'CException' with message 'The column must be specified in the format of "Name:Type:Label", where "Type" and "Label" are optional.' in C:\htdocs\yii\framework\zii\widgets\grid\CGridView.php:412
+Stack trace:
+#0 C:\htdocs\yii\framework\zii\widgets\grid\CGridView.php(383): CGridView->createDataColumn('$date->dept->de...')
+#1 C:\htdocs\yii\framework\zii\widgets\grid\CGridView.php(359): CGridView->initColumns()
+#2 C:\htdocs\yii\framework\web\CBaseController.php(147): CGridView->init()
+#3 C:\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#4 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(58): CBaseController->widget('zii.widgets.gri...', Array)
+#5 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#6 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#7 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#8 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#9 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(143): CController->render('admin', Array)
+#10 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#11 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#15 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#16 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#17 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#20 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#21 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#22 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#23 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 08:02:40 [error] [exception.CException] exception 'CException' with message 'Property "Entity.depte" is not defined.' in C:\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('depte')
+#1 C:\htdocs\yii\framework\web\helpers\CHtml.php(2529): CActiveRecord->__get('depte')
+#2 C:\htdocs\yii\framework\web\helpers\CHtml.php(2252): CHtml::resolveValue(Object(Entity), 'depte')
+#3 C:\htdocs\yii\framework\web\helpers\CHtml.php(1434): CHtml::activeInputField('text', Object(Entity), 'depte', Array)
+#4 C:\htdocs\yii\framework\zii\widgets\grid\CDataColumn.php(103): CHtml::activeTextField(Object(Entity), 'depte', Array)
+#5 C:\htdocs\yii\framework\zii\widgets\grid\CGridColumn.php(116): CDataColumn->renderFilterCellContent()
+#6 C:\htdocs\yii\framework\zii\widgets\grid\CGridView.php(532): CGridColumn->renderFilterCell()
+#7 C:\htdocs\yii\framework\zii\widgets\grid\CGridView.php(510): CGridView->renderFilter()
+#8 C:\htdocs\yii\framework\zii\widgets\grid\CGridView.php(480): CGridView->renderTableHeader()
+#9 C:\htdocs\yii\framework\zii\widgets\CBaseListView.php(167): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\htdocs\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{item...')
+#12 C:\htdocs\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#13 C:\htdocs\yii\framework\web\CBaseController.php(173): CBaseListView->run()
+#14 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(58): CBaseController->widget('zii.widgets.gri...', Array)
+#15 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#16 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#17 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#18 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#19 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(143): CController->render('admin', Array)
+#20 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#21 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#24 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#25 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#26 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#27 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#28 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#29 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#30 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#31 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#32 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#33 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 13:32:17 [error] [exception.CException] exception 'CException' with message 'Property "Template.owner" is not defined.' in C:\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('owner')
+#1 C:\htdocs\yii\demos\t\protected\views\template\_view.php(21): CActiveRecord->__get('owner')
+#2 C:\htdocs\yii\framework\web\CBaseController.php(130): require('C:\htdocs\yii\d...')
+#3 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, false)
+#4 C:\htdocs\yii\framework\zii\widgets\CListView.php(291): CBaseController->renderFile('C:\htdocs\yii\d...', Array)
+#5 C:\htdocs\yii\framework\zii\widgets\CBaseListView.php(167): CListView->renderItems()
+#6 [internal function]: CBaseListView->renderSection(Array)
+#7 C:\htdocs\yii\framework\zii\widgets\CBaseListView.php(150): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{sort...')
+#8 C:\htdocs\yii\framework\zii\widgets\CBaseListView.php(135): CBaseListView->renderContent()
+#9 C:\htdocs\yii\framework\web\CBaseController.php(173): CBaseListView->run()
+#10 C:\htdocs\yii\demos\t\protected\views\template\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#12 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#13 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#14 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#15 C:\htdocs\yii\demos\t\protected\controllers\TemplateController.php(128): CController->render('index', Array)
+#16 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): TemplateController->actionIndex()
+#17 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#26 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('template')
+#27 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#28 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#29 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=template
+---
+2014/08/12 14:52:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sla')
+#3 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=sla
+---
+2014/08/12 14:52:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('Sla')
+#3 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=Sla
+---
+2014/08/12 14:52:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "SlaDetail".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('SlaDetail')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=SlaDetail
+---
+2014/08/12 14:52:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "SlaDetails".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('SlaDetails')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=SlaDetails
+---
+2014/08/12 14:53:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ee".' in C:\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CController.php(270): CController->missingAction('ee')
+#1 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('ee')
+#2 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('users/ee')
+#3 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=users/ee
+---
+2014/08/12 14:53:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sla')
+#3 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=sla
+---
+2014/08/12 14:53:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "slade".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('slade')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=slade
+---
+2014/08/12 14:53:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sladetail".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sladetail')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=sladetail
+---
+2014/08/12 14:53:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sla')
+#3 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=sla
+---
+2014/08/12 14:55:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sladetail".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sladetail')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=sladetail
+---
+2014/08/12 14:55:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sladetails".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sladetails')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=sladetails
+---
+2014/08/12 14:55:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sla')
+#3 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=sla
+---
+2014/08/12 14:56:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "_rowForm".' in C:\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CController.php(270): CController->missingAction('_rowForm')
+#1 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('_rowForm')
+#2 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sla/_rowForm')
+#3 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=sla/_rowForm
+---
+2014/08/12 14:56:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sla')
+#3 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=sla
+---
+2014/08/12 16:07:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sla')
+#3 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=sla
+---
+2014/08/12 16:07:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sladetail".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sladetail')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=sladetail
+---
+2014/08/12 16:07:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sladetails".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sladetails')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=sladetails
+---
+2014/08/12 16:07:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sla')
+#3 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=sla
+---
+2014/08/12 16:14:41 [error] [php] Object of class Entity could not be converted to string (C:\htdocs\yii\framework\web\helpers\CHtml.php:2155)
+Stack trace:
+#0 C:\htdocs\yii\framework\web\helpers\CHtml.php(596): inputField()
+#1 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(72): textField()
+#2 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\htdocs\yii\framework\web\CBaseController.php(95): EntityController->renderInternal()
+#4 C:\htdocs\yii\framework\web\CController.php(869): EntityController->renderFile()
+#5 C:\htdocs\yii\framework\web\CController.php(782): EntityController->renderPartial()
+#6 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(143): EntityController->render()
+#7 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#8 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): EntityController->runAction()
+#10 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): EntityController->filterAccessControl()
+#13 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\htdocs\yii\framework\web\CController.php(265): EntityController->runActionWithFilters()
+#16 C:\htdocs\yii\framework\web\CWebApplication.php(282): EntityController->run()
+#17 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\htdocs\yii\demos\t\index.php(15): CWebApplication->run()
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+in C:\htdocs\yii\demos\t\protected\views\entity\admin.php (72)
+in C:\htdocs\yii\demos\t\protected\controllers\EntityController.php (143)
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/12 16:15:43 [error] [php] Object of class Entity could not be converted to string (C:\htdocs\yii\framework\web\helpers\CHtml.php:2155)
+Stack trace:
+#0 C:\htdocs\yii\framework\web\helpers\CHtml.php(596): inputField()
+#1 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(72): textField()
+#2 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\htdocs\yii\framework\web\CBaseController.php(95): EntityController->renderInternal()
+#4 C:\htdocs\yii\framework\web\CController.php(869): EntityController->renderFile()
+#5 C:\htdocs\yii\framework\web\CController.php(782): EntityController->renderPartial()
+#6 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(143): EntityController->render()
+#7 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#8 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): EntityController->runAction()
+#10 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): EntityController->filterAccessControl()
+#13 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\htdocs\yii\framework\web\CController.php(265): EntityController->runActionWithFilters()
+#16 C:\htdocs\yii\framework\web\CWebApplication.php(282): EntityController->run()
+#17 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\htdocs\yii\demos\t\index.php(15): CWebApplication->run()
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+in C:\htdocs\yii\demos\t\protected\views\entity\admin.php (72)
+in C:\htdocs\yii\demos\t\protected\controllers\EntityController.php (143)
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/12 16:18:38 [error] [php] Object of class Entity could not be converted to string (C:\htdocs\yii\framework\web\helpers\CHtml.php:2155)
+Stack trace:
+#0 C:\htdocs\yii\framework\web\helpers\CHtml.php(596): inputField()
+#1 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(56): textField()
+#2 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\htdocs\yii\framework\web\CBaseController.php(95): EntityController->renderInternal()
+#4 C:\htdocs\yii\framework\web\CController.php(869): EntityController->renderFile()
+#5 C:\htdocs\yii\framework\web\CController.php(782): EntityController->renderPartial()
+#6 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(143): EntityController->render()
+#7 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#8 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): EntityController->runAction()
+#10 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): EntityController->filterAccessControl()
+#13 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\htdocs\yii\framework\web\CController.php(265): EntityController->runActionWithFilters()
+#16 C:\htdocs\yii\framework\web\CWebApplication.php(282): EntityController->run()
+#17 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\htdocs\yii\demos\t\index.php(15): CWebApplication->run()
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+in C:\htdocs\yii\demos\t\protected\views\entity\admin.php (56)
+in C:\htdocs\yii\demos\t\protected\controllers\EntityController.php (143)
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/12 16:27:54 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "extField".' in C:\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(78): CComponent->__call('extField', Array)
+#1 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(78): CActiveForm->extField(Object(Entity), 'descr')
+#2 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#3 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#4 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#5 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#6 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(143): CController->render('admin', Array)
+#7 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#8 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#17 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#18 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#20 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 16:28:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "control/createAjax".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('control/createA...')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=control/createAjax
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 16:28:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "control/createAjax".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('control/createA...')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=control/createAjax
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 16:28:53 [error] [php] Object of class Entity could not be converted to string (C:\htdocs\yii\framework\web\helpers\CHtml.php:2155)
+Stack trace:
+#0 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(82): dropDownList()
+#1 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#2 C:\htdocs\yii\framework\web\CBaseController.php(95): EntityController->renderInternal()
+#3 C:\htdocs\yii\framework\web\CController.php(869): EntityController->renderFile()
+#4 C:\htdocs\yii\framework\web\CController.php(782): EntityController->renderPartial()
+#5 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(143): EntityController->render()
+#6 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#7 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): EntityController->runAction()
+#9 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#11 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): EntityController->filterAccessControl()
+#12 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#13 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\htdocs\yii\framework\web\CController.php(265): EntityController->runActionWithFilters()
+#15 C:\htdocs\yii\framework\web\CWebApplication.php(282): EntityController->run()
+#16 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\htdocs\yii\demos\t\index.php(15): CWebApplication->run()
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+in C:\htdocs\yii\demos\t\protected\views\entity\admin.php (82)
+in C:\htdocs\yii\demos\t\protected\controllers\EntityController.php (143)
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/12 16:29:45 [error] [php] Invalid argument supplied for foreach() (C:\htdocs\yii\framework\web\helpers\CHtml.php:2325)
+Stack trace:
+#0 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(82): CActiveForm->dropDownList()
+#1 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#2 C:\htdocs\yii\framework\web\CBaseController.php(95): EntityController->renderInternal()
+#3 C:\htdocs\yii\framework\web\CController.php(869): EntityController->renderFile()
+#4 C:\htdocs\yii\framework\web\CController.php(782): EntityController->renderPartial()
+#5 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(143): EntityController->render()
+#6 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#7 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): EntityController->runAction()
+#9 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#11 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): EntityController->filterAccessControl()
+#12 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#13 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\htdocs\yii\framework\web\CController.php(265): EntityController->runActionWithFilters()
+#15 C:\htdocs\yii\framework\web\CWebApplication.php(282): EntityController->run()
+#16 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\htdocs\yii\demos\t\index.php(15): CWebApplication->run()
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+in C:\htdocs\yii\demos\t\protected\views\entity\admin.php (82)
+in C:\htdocs\yii\demos\t\protected\controllers\EntityController.php (143)
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/12 16:31:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "control/createAjax".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('control/createA...')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=control/createAjax
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 16:31:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "control/createAjax".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('control/createA...')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=control/createAjax
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 16:31:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "control/createAjax".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('control/createA...')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=control/createAjax
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 16:39:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin".' in C:\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CController.php(270): CController->missingAction('admin')
+#1 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#2 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#3 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity/index
+---
+2014/08/12 16:39:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in C:\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CController.php(270): CController->missingAction('create')
+#1 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#2 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/create')
+#3 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/create
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 16:40:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "control/createAjax".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('control/createA...')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=control/createAjax
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 16:43:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "control/createAjax".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('control/createA...')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=control/createAjax
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 16:44:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "control/createAjax".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('control/createA...')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=control/createAjax
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 18:19:04 [error] [php] include(/yii/demos/t/protected/components/yiibooster.php): failed to open stream: No such file or directory (C:\htdocs\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\htdocs\yii\framework\YiiBase.php(196): import()
+#1 C:\htdocs\yii\framework\base\CModule.php(386): createComponent()
+#2 C:\htdocs\yii\framework\base\CModule.php(523): CWebApplication->getComponent()
+#3 C:\htdocs\yii\framework\base\CApplication.php(163): CWebApplication->preloadComponents()
+#4 C:\htdocs\yii\framework\YiiBase.php(125): CWebApplication->__construct()
+#5 C:\htdocs\yii\framework\YiiBase.php(98): createApplication()
+#6 C:\htdocs\yii\demos\t\index.php(15): createWebApplication()
+REQUEST_URI=/yii/demos/t/index.php?r=users
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/12 18:26:34 [error] [php] include(/yii/demos/t/protected/components/.php): failed to open stream: No such file or directory (C:\htdocs\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\htdocs\yii\framework\YiiBase.php(196): import()
+#1 C:\htdocs\yii\framework\base\CModule.php(386): createComponent()
+#2 C:\htdocs\yii\framework\base\CModule.php(523): CWebApplication->getComponent()
+#3 C:\htdocs\yii\framework\base\CApplication.php(163): CWebApplication->preloadComponents()
+#4 C:\htdocs\yii\framework\YiiBase.php(125): CWebApplication->__construct()
+#5 C:\htdocs\yii\framework\YiiBase.php(98): createApplication()
+#6 C:\htdocs\yii\demos\t\index.php(15): createWebApplication()
+REQUEST_URI=/yii/demos/t/index.php?r=users
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/12 18:27:03 [error] [php] include(/yii/demos/t/protected/components/yiibooster/Booster.php): failed to open stream: No such file or directory (C:\htdocs\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\htdocs\yii\framework\YiiBase.php(196): import()
+#1 C:\htdocs\yii\framework\base\CModule.php(386): createComponent()
+#2 C:\htdocs\yii\framework\base\CModule.php(523): CWebApplication->getComponent()
+#3 C:\htdocs\yii\framework\base\CApplication.php(163): CWebApplication->preloadComponents()
+#4 C:\htdocs\yii\framework\YiiBase.php(125): CWebApplication->__construct()
+#5 C:\htdocs\yii\framework\YiiBase.php(98): createApplication()
+#6 C:\htdocs\yii\demos\t\index.php(15): createWebApplication()
+REQUEST_URI=/yii/demos/t/index.php?r=users
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/12 18:28:07 [error] [php] include(/yii/demos/t/protected/components/yiibooster/components/Booster.php): failed to open stream: No such file or directory (C:\htdocs\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\htdocs\yii\framework\YiiBase.php(196): import()
+#1 C:\htdocs\yii\framework\base\CModule.php(386): createComponent()
+#2 C:\htdocs\yii\framework\base\CModule.php(523): CWebApplication->getComponent()
+#3 C:\htdocs\yii\framework\base\CApplication.php(163): CWebApplication->preloadComponents()
+#4 C:\htdocs\yii\framework\YiiBase.php(125): CWebApplication->__construct()
+#5 C:\htdocs\yii\framework\YiiBase.php(98): createApplication()
+#6 C:\htdocs\yii\demos\t\index.php(15): createWebApplication()
+REQUEST_URI=/yii/demos/t/index.php?r=users
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/12 18:47:09 [error] [php] include(/yii/demos/t/protected/components/yiibooster/components/.php): failed to open stream: No such file or directory (C:\htdocs\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\htdocs\yii\framework\YiiBase.php(196): import()
+#1 C:\htdocs\yii\framework\base\CModule.php(386): createComponent()
+#2 C:\htdocs\yii\framework\base\CModule.php(523): CWebApplication->getComponent()
+#3 C:\htdocs\yii\framework\base\CApplication.php(163): CWebApplication->preloadComponents()
+#4 C:\htdocs\yii\framework\YiiBase.php(125): CWebApplication->__construct()
+#5 C:\htdocs\yii\framework\YiiBase.php(98): createApplication()
+#6 C:\htdocs\yii\demos\t\index.php(15): createWebApplication()
+REQUEST_URI=/yii/demos/t/
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/12 18:47:37 [error] [php] include(/yii/demos/t/protected/components/yiibooster/components/Bootstrap.php): failed to open stream: No such file or directory (C:\htdocs\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\htdocs\yii\framework\YiiBase.php(196): import()
+#1 C:\htdocs\yii\framework\base\CModule.php(386): createComponent()
+#2 C:\htdocs\yii\framework\base\CModule.php(523): CWebApplication->getComponent()
+#3 C:\htdocs\yii\framework\base\CApplication.php(163): CWebApplication->preloadComponents()
+#4 C:\htdocs\yii\framework\YiiBase.php(125): CWebApplication->__construct()
+#5 C:\htdocs\yii\framework\YiiBase.php(98): createApplication()
+#6 C:\htdocs\yii\demos\t\index.php(15): createWebApplication()
+REQUEST_URI=/yii/demos/t/
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/12 18:47:38 [error] [php] include(/yii/demos/t/protected/components/yiibooster/components/Bootstrap.php): failed to open stream: No such file or directory (C:\htdocs\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\htdocs\yii\framework\YiiBase.php(196): import()
+#1 C:\htdocs\yii\framework\base\CModule.php(386): createComponent()
+#2 C:\htdocs\yii\framework\base\CModule.php(523): CWebApplication->getComponent()
+#3 C:\htdocs\yii\framework\base\CApplication.php(163): CWebApplication->preloadComponents()
+#4 C:\htdocs\yii\framework\YiiBase.php(125): CWebApplication->__construct()
+#5 C:\htdocs\yii\framework\YiiBase.php(98): createApplication()
+#6 C:\htdocs\yii\demos\t\index.php(15): createWebApplication()
+REQUEST_URI=/yii/demos/t/
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/12 18:48:30 [error] [exception.CException] exception 'CException' with message 'Alias "C:.htdocs.yii.demos.t.protected.components.yiibooster.components" is invalid. Make sure it points to an existing directory or file.' in C:\htdocs\yii\framework\YiiBase.php:295
+Stack trace:
+#0 C:\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('C:\htdocs\yii\d...', true)
+#1 C:\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\htdocs\yii\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 C:\htdocs\yii\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 C:\htdocs\yii\framework\YiiBase.php(125): CApplication->__construct('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'C:\htdocs\yii\d...')
+#6 C:\htdocs\yii\demos\t\index.php(15): YiiBase::createWebApplication('C:\htdocs\yii\d...')
+#7 {main}
+REQUEST_URI=/yii/demos/t/
+---
+2014/08/12 18:49:07 [error] [php] include(/yii/demos/t/protected/components/yiibooster/components/Bootstrap.php): failed to open stream: No such file or directory (C:\htdocs\yii\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\htdocs\yii\framework\YiiBase.php(196): import()
+#1 C:\htdocs\yii\framework\base\CModule.php(386): createComponent()
+#2 C:\htdocs\yii\framework\base\CModule.php(523): CWebApplication->getComponent()
+#3 C:\htdocs\yii\framework\base\CApplication.php(163): CWebApplication->preloadComponents()
+#4 C:\htdocs\yii\framework\YiiBase.php(125): CWebApplication->__construct()
+#5 C:\htdocs\yii\framework\YiiBase.php(98): createApplication()
+#6 C:\htdocs\yii\demos\t\index.php(15): createWebApplication()
+REQUEST_URI=/yii/demos/t/
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/12 18:58:46 [error] [exception.CException] exception 'CException' with message 'Alias "booster.components.Bootstrap" is invalid. Make sure it points to an existing directory or file.' in C:\htdocs\yii\framework\YiiBase.php:347
+Stack trace:
+#0 C:\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('booster.compone...', true)
+#1 C:\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\htdocs\yii\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 C:\htdocs\yii\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 C:\htdocs\yii\framework\YiiBase.php(125): CApplication->__construct('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'C:\htdocs\yii\d...')
+#6 C:\htdocs\yii\demos\t\index.php(15): YiiBase::createWebApplication('C:\htdocs\yii\d...')
+#7 {main}
+REQUEST_URI=/yii/demos/t/
+---
+2014/08/12 18:59:56 [error] [exception.CException] exception 'CException' with message 'Alias "booster.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('booster.compone...', true)
+#1 C:\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\htdocs\yii\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 C:\htdocs\yii\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 C:\htdocs\yii\framework\YiiBase.php(125): CApplication->__construct('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'C:\htdocs\yii\d...')
+#6 C:\htdocs\yii\demos\t\index.php(15): YiiBase::createWebApplication('C:\htdocs\yii\d...')
+#7 {main}
+REQUEST_URI=/yii/demos/t/
+---
+2014/08/12 19:00:05 [error] [exception.CException] exception 'CException' with message 'Alias "booster.components.Bootstrap" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('booster.compone...', true)
+#1 C:\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\htdocs\yii\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 C:\htdocs\yii\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 C:\htdocs\yii\framework\YiiBase.php(125): CApplication->__construct('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'C:\htdocs\yii\d...')
+#6 C:\htdocs\yii\demos\t\index.php(15): YiiBase::createWebApplication('C:\htdocs\yii\d...')
+#7 {main}
+REQUEST_URI=/yii/demos/t/
+---
+2014/08/12 19:03:26 [error] [exception.CException] exception 'CException' with message 'Alias "C:.htdocs.yii.demos.t.protected.config" is invalid. Make sure it points to an existing directory or file.' in C:\htdocs\yii\framework\YiiBase.php:295
+Stack trace:
+#0 C:\htdocs\yii\framework\YiiBase.php(196): YiiBase::import('C:\htdocs\yii\d...', true)
+#1 C:\htdocs\yii\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 C:\htdocs\yii\framework\base\CModule.php(523): CModule->getComponent('bootstrap')
+#3 C:\htdocs\yii\framework\base\CApplication.php(163): CModule->preloadComponents()
+#4 C:\htdocs\yii\framework\YiiBase.php(125): CApplication->__construct('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'C:\htdocs\yii\d...')
+#6 C:\htdocs\yii\demos\t\index.php(15): YiiBase::createWebApplication('C:\htdocs\yii\d...')
+#7 {main}
+REQUEST_URI=/yii/demos/t/
+---
+2014/08/12 19:10:48 [error] [exception.CException] exception 'CException' with message 'Alias "ext.clonnableFields.ClonnableFields" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('ext.clonnableFi...', true)
+#1 C:\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(EntityController), 'ext.clonnableFi...', Array)
+#2 C:\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.clonnableFi...', Array)
+#3 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(85): CBaseController->widget('ext.clonnableFi...', Array)
+#4 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#6 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#7 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(162): CController->render('admin', Array)
+#9 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#10 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#20 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 19:11:34 [error] [exception.CException] exception 'CException' with message 'Alias "ext.clonnableFields.ClonnableFields" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('ext.clonnableFi...', true)
+#1 C:\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(EntityController), 'ext.clonnableFi...', Array)
+#2 C:\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.clonnableFi...', Array)
+#3 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(85): CBaseController->widget('ext.clonnableFi...', Array)
+#4 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#6 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#7 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(162): CController->render('admin', Array)
+#9 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#10 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#20 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 19:11:35 [error] [exception.CException] exception 'CException' with message 'Alias "ext.clonnableFields.ClonnableFields" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('ext.clonnableFi...', true)
+#1 C:\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(EntityController), 'ext.clonnableFi...', Array)
+#2 C:\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.clonnableFi...', Array)
+#3 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(85): CBaseController->widget('ext.clonnableFi...', Array)
+#4 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#6 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#7 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(162): CController->render('admin', Array)
+#9 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#10 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#20 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 19:11:35 [error] [exception.CException] exception 'CException' with message 'Alias "ext.clonnableFields.ClonnableFields" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('ext.clonnableFi...', true)
+#1 C:\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(EntityController), 'ext.clonnableFi...', Array)
+#2 C:\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.clonnableFi...', Array)
+#3 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(85): CBaseController->widget('ext.clonnableFi...', Array)
+#4 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#6 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#7 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(162): CController->render('admin', Array)
+#9 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#10 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#20 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 19:11:35 [error] [exception.CException] exception 'CException' with message 'Alias "ext.clonnableFields.ClonnableFields" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('ext.clonnableFi...', true)
+#1 C:\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(EntityController), 'ext.clonnableFi...', Array)
+#2 C:\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.clonnableFi...', Array)
+#3 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(85): CBaseController->widget('ext.clonnableFi...', Array)
+#4 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#6 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#7 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(162): CController->render('admin', Array)
+#9 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#10 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#20 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 19:11:36 [error] [exception.CException] exception 'CException' with message 'Alias "ext.clonnableFields.ClonnableFields" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('ext.clonnableFi...', true)
+#1 C:\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(EntityController), 'ext.clonnableFi...', Array)
+#2 C:\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.clonnableFi...', Array)
+#3 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(85): CBaseController->widget('ext.clonnableFi...', Array)
+#4 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#6 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#7 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(162): CController->render('admin', Array)
+#9 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#10 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#20 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 19:12:20 [error] [exception.CException] exception 'CException' with message 'Alias "ext.clonnableFields.ClonnableFields" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('ext.clonnableFi...', true)
+#1 C:\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(EntityController), 'ext.clonnableFi...', Array)
+#2 C:\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.clonnableFi...', Array)
+#3 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(85): CBaseController->widget('ext.clonnableFi...', Array)
+#4 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#6 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#7 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(162): CController->render('admin', Array)
+#9 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#10 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#20 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 19:26:55 [error] [exception.CException] exception 'CException' with message 'Alias "ext.clonnableFields.ClonnableFields" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('ext.clonnableFi...', true)
+#1 C:\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(EntityController), 'ext.clonnableFi...', Array)
+#2 C:\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.clonnableFi...', Array)
+#3 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(85): CBaseController->widget('ext.clonnableFi...', Array)
+#4 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#6 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#7 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(162): CController->render('admin', Array)
+#9 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#10 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#20 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 19:27:13 [error] [exception.CException] exception 'CException' with message 'Alias "ext.clonnableFields.ClonnableFields" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('ext.clonnableFi...', true)
+#1 C:\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(EntityController), 'ext.clonnableFi...', Array)
+#2 C:\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.clonnableFi...', Array)
+#3 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(85): CBaseController->widget('ext.clonnableFi...', Array)
+#4 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#6 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#7 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(162): CController->render('admin', Array)
+#9 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#10 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#20 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity/
+---
+2014/08/12 19:28:07 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.clonnableFields.ClonnableFields" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('application.ext...', true)
+#1 C:\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(EntityController), 'application.ext...', Array)
+#2 C:\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(85): CBaseController->widget('application.ext...', Array)
+#4 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#6 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#7 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(162): CController->render('admin', Array)
+#9 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#10 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#20 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity/
+---
+2014/08/12 19:28:18 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.ClonnableFields.ClonnableFields" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\htdocs\yii\framework\YiiBase.php:322
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('application.ext...', true)
+#1 C:\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(EntityController), 'application.ext...', Array)
+#2 C:\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 C:\htdocs\yii\demos\t\protected\views\entity\admin.php(85): CBaseController->widget('application.ext...', Array)
+#4 C:\htdocs\yii\framework\web\CBaseController.php(126): require('C:\htdocs\yii\d...')
+#5 C:\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\htdocs\yii\d...', Array, true)
+#6 C:\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\htdocs\yii\d...', Array, true)
+#7 C:\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#8 C:\htdocs\yii\demos\t\protected\controllers\EntityController.php(162): CController->render('admin', Array)
+#9 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): EntityController->actionAdmin()
+#10 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('entity/admin')
+#20 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=entity/admin
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity/
+---
+2014/08/12 19:42:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "control/mcreateAjax".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('control/mcreate...')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=control/mcreateAjax
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 19:42:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "control/mcreateAjax".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('control/mcreate...')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=control/mcreateAjax
+HTTP_REFERER=http://localhost/yii/demos/t/index.php?r=entity/admin
+---
+2014/08/12 19:54:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('sla/')
+#3 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=sla/
+---
+2014/08/12 19:55:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "SlaDetail".' in C:\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('SlaDetail')
+#1 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\htdocs\yii\demos\t\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii/demos/t/index.php?r=SlaDetail
+---
+2014/08/13 06:25:30 [error] [php] Object of class Dept could not be converted to string (C:\htdocs\yii\framework\web\helpers\CHtml.php:2155)
+Stack trace:
+#0 C:\htdocs\yii\framework\web\helpers\CHtml.php(596): inputField()
+#1 C:\htdocs\yii\demos\t\protected\views\dept\_form.php(80): textField()
+#2 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\htdocs\yii\framework\web\CBaseController.php(95): DeptController->renderInternal()
+#4 C:\htdocs\yii\framework\web\CController.php(869): DeptController->renderFile()
+#5 C:\htdocs\yii\demos\t\protected\views\dept\create.php(18): DeptController->renderPartial()
+#6 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#7 C:\htdocs\yii\framework\web\CBaseController.php(95): DeptController->renderInternal()
+#8 C:\htdocs\yii\framework\web\CController.php(869): DeptController->renderFile()
+#9 C:\htdocs\yii\framework\web\CController.php(782): DeptController->renderPartial()
+#10 C:\htdocs\yii\demos\t\protected\controllers\DeptController.php(79): DeptController->render()
+#11 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): DeptController->actionCreate()
+#12 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): DeptController->runAction()
+#14 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#16 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): DeptController->filterAccessControl()
+#17 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#18 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\htdocs\yii\framework\web\CController.php(265): DeptController->runActionWithFilters()
+#20 C:\htdocs\yii\framework\web\CWebApplication.php(282): DeptController->run()
+#21 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\htdocs\yii\demos\t\index.php(15): CWebApplication->run()
+REQUEST_URI=/yii/demos/t/index.php?r=dept/create
+in C:\htdocs\yii\demos\t\protected\views\dept\_form.php (80)
+in C:\htdocs\yii\demos\t\protected\views\dept\create.php (18)
+in C:\htdocs\yii\demos\t\protected\controllers\DeptController.php (79)
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/13 06:25:39 [error] [php] Object of class Dept could not be converted to string (C:\htdocs\yii\framework\web\helpers\CHtml.php:2155)
+Stack trace:
+#0 C:\htdocs\yii\framework\web\helpers\CHtml.php(596): inputField()
+#1 C:\htdocs\yii\demos\t\protected\views\dept\_form.php(60): textField()
+#2 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\htdocs\yii\framework\web\CBaseController.php(95): DeptController->renderInternal()
+#4 C:\htdocs\yii\framework\web\CController.php(869): DeptController->renderFile()
+#5 C:\htdocs\yii\demos\t\protected\views\dept\create.php(18): DeptController->renderPartial()
+#6 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#7 C:\htdocs\yii\framework\web\CBaseController.php(95): DeptController->renderInternal()
+#8 C:\htdocs\yii\framework\web\CController.php(869): DeptController->renderFile()
+#9 C:\htdocs\yii\framework\web\CController.php(782): DeptController->renderPartial()
+#10 C:\htdocs\yii\demos\t\protected\controllers\DeptController.php(79): DeptController->render()
+#11 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): DeptController->actionCreate()
+#12 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): DeptController->runAction()
+#14 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#16 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): DeptController->filterAccessControl()
+#17 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#18 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\htdocs\yii\framework\web\CController.php(265): DeptController->runActionWithFilters()
+#20 C:\htdocs\yii\framework\web\CWebApplication.php(282): DeptController->run()
+#21 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\htdocs\yii\demos\t\index.php(15): CWebApplication->run()
+REQUEST_URI=/yii/demos/t/index.php?r=dept/create
+in C:\htdocs\yii\demos\t\protected\views\dept\_form.php (60)
+in C:\htdocs\yii\demos\t\protected\views\dept\create.php (18)
+in C:\htdocs\yii\demos\t\protected\controllers\DeptController.php (79)
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/13 06:40:12 [error] [php] Object of class Dept could not be converted to string (C:\htdocs\yii\framework\web\helpers\CHtml.php:2155)
+Stack trace:
+#0 C:\htdocs\yii\framework\web\helpers\CHtml.php(596): inputField()
+#1 C:\htdocs\yii\demos\t\protected\views\dept\_form.php(60): textField()
+#2 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\htdocs\yii\framework\web\CBaseController.php(95): DeptController->renderInternal()
+#4 C:\htdocs\yii\framework\web\CController.php(869): DeptController->renderFile()
+#5 C:\htdocs\yii\demos\t\protected\views\dept\create.php(18): DeptController->renderPartial()
+#6 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#7 C:\htdocs\yii\framework\web\CBaseController.php(95): DeptController->renderInternal()
+#8 C:\htdocs\yii\framework\web\CController.php(869): DeptController->renderFile()
+#9 C:\htdocs\yii\framework\web\CController.php(782): DeptController->renderPartial()
+#10 C:\htdocs\yii\demos\t\protected\controllers\DeptController.php(83): DeptController->render()
+#11 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): DeptController->actionCreate()
+#12 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): DeptController->runAction()
+#14 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#16 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): DeptController->filterAccessControl()
+#17 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#18 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\htdocs\yii\framework\web\CController.php(265): DeptController->runActionWithFilters()
+#20 C:\htdocs\yii\framework\web\CWebApplication.php(282): DeptController->run()
+#21 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\htdocs\yii\demos\t\index.php(15): CWebApplication->run()
+REQUEST_URI=/yii/demos/t/index.php?r=dept/create
+in C:\htdocs\yii\demos\t\protected\views\dept\_form.php (60)
+in C:\htdocs\yii\demos\t\protected\views\dept\create.php (18)
+in C:\htdocs\yii\demos\t\protected\controllers\DeptController.php (83)
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/13 06:40:48 [error] [php] Object of class Dept could not be converted to string (C:\htdocs\yii\framework\web\helpers\CHtml.php:2155)
+Stack trace:
+#0 C:\htdocs\yii\framework\web\helpers\CHtml.php(596): inputField()
+#1 C:\htdocs\yii\demos\t\protected\views\dept\_form.php(60): textField()
+#2 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\htdocs\yii\framework\web\CBaseController.php(95): DeptController->renderInternal()
+#4 C:\htdocs\yii\framework\web\CController.php(869): DeptController->renderFile()
+#5 C:\htdocs\yii\demos\t\protected\views\dept\create.php(18): DeptController->renderPartial()
+#6 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#7 C:\htdocs\yii\framework\web\CBaseController.php(95): DeptController->renderInternal()
+#8 C:\htdocs\yii\framework\web\CController.php(869): DeptController->renderFile()
+#9 C:\htdocs\yii\framework\web\CController.php(782): DeptController->renderPartial()
+#10 C:\htdocs\yii\demos\t\protected\controllers\DeptController.php(83): DeptController->render()
+#11 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): DeptController->actionCreate()
+#12 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): DeptController->runAction()
+#14 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#16 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): DeptController->filterAccessControl()
+#17 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#18 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\htdocs\yii\framework\web\CController.php(265): DeptController->runActionWithFilters()
+#20 C:\htdocs\yii\framework\web\CWebApplication.php(282): DeptController->run()
+#21 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\htdocs\yii\demos\t\index.php(15): CWebApplication->run()
+REQUEST_URI=/yii/demos/t/index.php?r=dept/create
+in C:\htdocs\yii\demos\t\protected\views\dept\_form.php (60)
+in C:\htdocs\yii\demos\t\protected\views\dept\create.php (18)
+in C:\htdocs\yii\demos\t\protected\controllers\DeptController.php (83)
+in C:\htdocs\yii\demos\t\index.php (15)
+2014/08/13 06:40:58 [error] [php] Object of class Dept could not be converted to string (C:\htdocs\yii\framework\web\helpers\CHtml.php:2155)
+Stack trace:
+#0 C:\htdocs\yii\framework\web\helpers\CHtml.php(596): inputField()
+#1 C:\htdocs\yii\demos\t\protected\views\dept\_form.php(60): textField()
+#2 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#3 C:\htdocs\yii\framework\web\CBaseController.php(95): DeptController->renderInternal()
+#4 C:\htdocs\yii\framework\web\CController.php(869): DeptController->renderFile()
+#5 C:\htdocs\yii\demos\t\protected\views\dept\create.php(18): DeptController->renderPartial()
+#6 C:\htdocs\yii\framework\web\CBaseController.php(126): require()
+#7 C:\htdocs\yii\framework\web\CBaseController.php(95): DeptController->renderInternal()
+#8 C:\htdocs\yii\framework\web\CController.php(869): DeptController->renderFile()
+#9 C:\htdocs\yii\framework\web\CController.php(782): DeptController->renderPartial()
+#10 C:\htdocs\yii\demos\t\protected\controllers\DeptController.php(83): DeptController->render()
+#11 C:\htdocs\yii\framework\web\actions\CInlineAction.php(49): DeptController->actionCreate()
+#12 C:\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\htdocs\yii\framework\web\filters\CFilterChain.php(133): DeptController->runAction()
+#14 C:\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#16 C:\htdocs\yii\framework\web\filters\CInlineFilter.php(58): DeptController->filterAccessControl()
+#17 C:\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#18 C:\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\htdocs\yii\framework\web\CController.php(265): DeptController->runActionWithFilters()
+#20 C:\htdocs\yii\framework\web\CWebApplication.php(282): DeptController->run()
+#21 C:\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 C:\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#23 C:\htdocs\yii\demos\t\index.php(15): CWebApplication->run()
+REQUEST_URI=/yii/demos/t/index.php?r=dept/create
+in C:\htdocs\yii\demos\t\protected\views\dept\_form.php (60)
+in C:\htdocs\yii\demos\t\protected\views\dept\create.php (18)
+in C:\htdocs\yii\demos\t\protected\controllers\DeptController.php (83)
+in C:\htdocs\yii\demos\t\index.php (15)

@@ -112,7 +112,7 @@ class ProcurementSpendingController extends Controller
 			$jbudget .="<div id='tbudget".$data[$i][itemid]."'>".$tbudget."</div>";
 		}
 		?>
-        <script type="text/javascript" src="/bis/assets/dc899cdc/jquery.js"></script>
+        <script type="text/javascript" src="/assets/dc899cdc/jquery.js"></script>
         <script type="text/javascript">
 		function test(dd,v) { 
 			
@@ -191,7 +191,7 @@ jQuery(function($) {
 			$jbudget .="<div id='tbudget".$data[$i][itemid]."'>".$tbudget."</div>";
 		}
 		?>
-        <script type="text/javascript" src="/bis/assets/dc899cdc/jquery.js"></script>
+        <script type="text/javascript" src="/assets/dc899cdc/jquery.js"></script>
         <script type="text/javascript">
 		function test(dd,v) { 
 			
@@ -279,7 +279,7 @@ jQuery(function($) {
 			$jbudget .="<div id='tbudget2".$data[$i][itemid]."'>".$tbudget."</div>";
 		}
 		?>
-        <script type="text/javascript" src="/bis/assets/dc899cdc/jquery.js"></script>
+        <script type="text/javascript" src="/assets/dc899cdc/jquery.js"></script>
         <script type="text/javascript">
 		function test2(dd2,v2) { 
 			

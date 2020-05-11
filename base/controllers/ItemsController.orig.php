@@ -71,9 +71,7 @@ class ItemsController extends Controller
 		for($i=0; $i<count($data);$i++)				
 			$csz .="<option class=ew value=".$data[$i]['id'].">".$data[$i]['sign']." ".$data[$i]['name']."</option>";
 		?>
-        <!-- script type="text/javascript" src="/bis/assets/dc899cdc/jquery.js"></script -->
-		
-		<script type="text/javascript" src="/assets/dc899cdc/jquery.js"></script>
+        <script type="text/javascript" src="/assets/dc899cdc/jquery.js"></script>
         <script type="text/javascript">
 		
 		jQuery(function($) {
@@ -111,7 +109,7 @@ echo "<tr class=".$rown." id=sel".$i."><td>".($i+1).".</td><td><input id='it".$i
 ?>
 	
 </tbody></table>
-<div id="dkeeper" style='display:none;'><?php echo $i?></div>
+<div id=dkeeper style='display:none;'><?php echo $i?></div>
      <?php	
 	}
 

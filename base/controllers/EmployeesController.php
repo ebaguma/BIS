@@ -53,7 +53,7 @@ class EmployeesController extends Controller
 				'users'=>$heads,
 			),
 			array('allow', // allow everyone (logged in) to view employees and to populate the sections and units drop downs
-				'actions'=>array('admin','items','units','up'),
+				'actions'=>array('admin','items','units','up','copy'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -86,7 +86,6 @@ class EmployeesController extends Controller
 	{
 		$this->render('view',array('model'=>$this->loadModel($id)));
 	}
-
 	public function actionCreate()
 	{
 		$model=new Employees;
@@ -102,10 +101,28 @@ class EmployeesController extends Controller
 
 		$this->render('create',array('model'=>$model));
 	}
-
+	public function actionCopy() {
+		$copyfrom=10;
+		$newbudget=11;
+		app()->db->createCommand("delete from employees where budget=".$newbudget)->execute();
+		$row=app()->db->createCommand("select * from employees where budget=".$copyfrom)->queryAll();
+		//echo count($row); exit;
+		foreach($row as $r) {
+			$model=new Employees;
+			$model->attributes=$r;
+			$model->budget=$newbudget;
+			//print_r($model->attributes);
+			if(!$model->save())
+				print_r($model->attributes);
+			else echo $ctr++." copied ".$model->id."<br/>";
+			//exit;
+		}
+	}
 	public function actionUp() {
 		$row=app()->db->createCommand("select * from employees where budget=".budget())->queryAll();
+		app()->db->createCommand("delete from budget where budget=11 and tbl='employees'")->execute();
 //		dump($row);
+	echo "BUDGET: ".budget();
 		foreach($row as $r) {
 //			dump($r[id]);
 			echo "updating ".++$ctr." - ".$r[id]." : ".$r[employee]."<br/>";
@@ -113,7 +130,6 @@ class EmployeesController extends Controller
 		}
 		
 	}
-	
 	public function actionUpdate1($id)
 	{
 		$model=$this->loadModel($id);
@@ -363,7 +379,7 @@ class EmployeesController extends Controller
         // Miscellaneous glyphs, UTF-8
         $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('A4', 'Miscellaneous glyphs')
-            ->setCellValue('A5', 'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½');
+            ->setCellValue('A5', 'éàèùâêîôûëïüÿäöüç');
         
         // Rename worksheet
         $objPHPExcel->getActiveSheet()->setTitle('YiiExcel');
@@ -387,7 +403,7 @@ class EmployeesController extends Controller
 		
 		spl_autoload_register(array('YiiBase','autoload'));
        // exit();
-    }//fin del mï¿½todo actionExcel
+    }//fin del método actionExcel
 
 	/**
 	 * Lists all models.

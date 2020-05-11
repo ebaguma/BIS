@@ -1,13 +1,5 @@
 <?php
 
-// mPDF 5.7
-// Replace a section of an array with the elements in reverse
-function array_splice_reverse(&$arr, $offset, $length) {
-	$tmp = (array_reverse(array_slice($arr, $offset, $length)));
-	array_splice($arr, $offset, $length, $tmp);
-}
-
-
 // mPDF 5.6.23
 function array_insert(&$array, $value, $offset) {
 	if (is_array($array)) {
@@ -26,8 +18,8 @@ function array_insert(&$array, $value, $offset) {
 	return count($array);
 }
 
-// mPDF 5.7.4 URLs
-function urldecode_parts($url) {
+function urlencode_part($url) {	// mPDF 5.6.02
+	if (!preg_match('/^[a-z]+:\/\//i',$url)) { return $url; }
 	$file=$url;
 	$query='';
 	if (preg_match('/[?]/',$url)) {
@@ -35,8 +27,7 @@ function urldecode_parts($url) {
 		$file=$bits[0];
 		$query='?'.$bits[1];
 	}
-	$file = rawurldecode($file);
-	$query = urldecode($query);
+	$file = str_replace(array(" ","!","$","&","'","(",")","*","+",",",";","="),array("%20","%21","%24","%26","%27","%28","%29","%2A","%2B","%2C","%3B","%3D"),$file);
 	return $file.$query;
 }
 
@@ -101,29 +92,12 @@ function PreparePreText($text,$ff='//FF//') {
 if(!function_exists('strcode2utf')){ 
   function strcode2utf($str,$lo=true) {
 	//converts all the &#nnn; and &#xhhh; in a string to Unicode
-	// mPDF 5.7
-	if ($lo) {
-		$str = preg_replace_callback('/\&\#([0-9]+)\;/m', 'code2utf_lo_callback', $str);
-		$str = preg_replace_callback('/\&\#x([0-9a-fA-F]+)\;/m', 'codeHex2utf_lo_callback', $str);
-	}
-	else {
-		$str = preg_replace_callback('/\&\#([0-9]+)\;/m', 'code2utf_callback', $str);
-		$str = preg_replace_callback('/\&\#x([0-9a-fA-F]+)\;/m', 'codeHex2utf_callback', $str);
-	}
+	if ($lo) { $lo = 1; } else { $lo = 0; }
+	//WILSON ABIGABA UETCL commented out
+	//$str = preg_replace('/\&\#([0-9]+)\;/me', "code2utf('\\1',{$lo})",$str);
+	//$str = preg_replace('/\&\#x([0-9a-fA-F]+)\;/me', "codeHex2utf('\\1',{$lo})",$str);
 	return $str;
   }
-}
-function code2utf_callback($matches) {
-	return code2utf($matches[1], 0);
-}
-function code2utf_lo_callback($matches) {
-	return code2utf($matches[1], 1);
-}
-function codeHex2utf_callback($matches) {
-	return codeHex2utf($matches[1], 0);
-}
-function codeHex2utf_lo_callback($matches) {
-	return codeHex2utf($matches[1], 1);
 }
 
 if(!function_exists('code2utf')){ 

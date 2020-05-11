@@ -71,7 +71,7 @@ class ItemsController extends Controller
 		for($i=0; $i<count($data);$i++)				
 			$csz .="<option class=ew value=".$data[$i]['id'].">".$data[$i]['sign']." ".$data[$i]['name']."</option>";
 		?>
-        <!-- script type="text/javascript" src="/bis/assets/dc899cdc/jquery.js"></script -->
+        <!-- script type="text/javascript" src="/assets/dc899cdc/jquery.js"></script -->
 		
 		<script type="text/javascript" src="/assets/dc899cdc/jquery.js"></script>
         <script type="text/javascript">

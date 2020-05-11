@@ -20,13 +20,13 @@ $st=!empty($_REQUEST['c']) ? "none" : "block";
 
 switch ($_REQUEST['p']) {
 	case 	"all":
-		$sql ="accountcode regexp '^4[0-9]$' or accountcode regexp '^10$'";
-		break;
+	$sql ="accountcode regexp '^4[0-9]$' or accountcode regexp '^10$'";
+	break;
 	case 	"42":
-		$sql ="accountcode regexp '^".$_REQUEST['p']."$' or accountcode regexp '^43$'";
-		break;
+	$sql ="accountcode regexp '^".$_REQUEST['p']."$' or accountcode regexp '^43$'";
+	break;
 	default:
-		$sql ="accountcode regexp '^".$_REQUEST['p']."$'";
+	$sql ="accountcode regexp '^".$_REQUEST['p']."$'";
 }
 $rd='realdept';
 $cs=Yii::app()->db->createCommand("select * from accountcodes where report=1 and $sql")->queryAll();
@@ -38,21 +38,13 @@ if(is_dept_head() && !corporate_report()) {
 	$ee=Sections::model()->findByPk(user()->dept[id]);
 	$depts=app()->db->CreateCommand("SELECT * from sections where department in (select department from sections where  id='".user()->dept[id]."')")->queryAll();
 	$rd='dept';
-} else{
-	$ad=" where id=(select department from sections where id='".user()->dept[id]."')";
-	$bname="Section";
-	$depts=app()->db->CreateCommand("SELECT * from sections where   id='". user()->dept[id] . "'")->queryAll();
-	$rd='dept';
 }
-
-/***
 if(!is_dept_head() && !corporate_report())  {
 	$ad=" where id=(select department from sections where id='".user()->dept[id]."')";
 	$bname="Section";
 	$depts=app()->db->CreateCommand("SELECT * from sections where   id='".user()->dept[id]."'")->queryAll();
 	$rd='dept';
 }
-***/
 
 ?>
 <style>
@@ -106,7 +98,7 @@ foreach($codes as $cd) {
 	$linetot=0;$ctr++;
 	$dctr=0;
 	foreach($depts as $dep) {
-		$bdgt=Yii::app()->db->createCommand("select sum(amount) a from v_budget where accountcode ='".$cd[id]."' and budget='".user()->budget['id']."' and dept = " . $dep['id'] )->queryAll();
+		$bdgt=Yii::app()->db->createCommand("select sum(amount) a from v_budget where accountcode ='".$cd[id]."' and budget='".user()->budget['id']."' and $rd='".$dep['id']."' $ad2")->queryAll();
 		//echo "select sum(amount) a from v_budget where accountcode ='".$cd[id]."' and budget='".user()->budget['id']."' and $rd='".$dep['id']."' $ad2";
 		$total += $bdgt[0][a];
 		$linetot +=$bdgt[0][a];
@@ -145,6 +137,11 @@ echo $ht;
 
 if($_REQUEST['c']) {
 	switch ($_REQUEST['c']) {
+		case "410004":// Medical
+      if(!budget_locked()) medical_calc();
+			report_400001();
+			break;
+
 		case "400004":// NSSF
       if(!budget_locked()) nssf_calc();
 			report_400001();
@@ -170,7 +167,7 @@ if($_REQUEST['c']) {
 		case "400014":// Other Allowance (Contracts commitee)
 		case "400025":// Mobile phone
 		case "400012":// Risk
-		case "410004":// Medical
+		//case "410004":// Medical
 			report_400001();
 			break;
 		case "400002": // Over time
@@ -577,6 +574,7 @@ function report_400001() {
 }
 function standby_calc() {
 	$emp=Employees::model()->findAll(' budget='.budget());
+	app()->db->createCommand("delete from budget where tbl='employees' and tblcolumn='standby' and budget='".budget()."'")->execute();
 	foreach($emp as $em) {
 		$emp_bt=app()->db->createCommand("SELECT price a from v_budget where tbl='employees' and tblid='".$em->id."' and budget='".budget()."' and tblcolumn='salary'")->queryAll();
 		// /echo $emp_bt[0][a]."<br>";
@@ -603,6 +601,7 @@ function standby_calc() {
 }
 function shift_calc() {
 	$emp=Employees::model()->findAll(' budget='.budget());
+	app()->db->createCommand("delete from budget where tbl='employees' and tblcolumn='shift' and budget='".budget()."'")->execute();
 	foreach($emp as $em) {
 		$emp_bt=app()->db->createCommand("SELECT price a from v_budget where tbl='employees' and tblid='".$em->id."' and budget='".budget()."' and tblcolumn='salary'")->queryAll();
 		// /echo $emp_bt[0][a]."<br>";
@@ -628,8 +627,51 @@ function shift_calc() {
 	}
 }
 
+function medical_calc() {
+	$emp=Employees::model()->findAll(' budget='.budget());
+	app()->db->createCommand("delete from budget where tbl='employees' and tblcolumn='medical' and budget='".budget()."'")->execute();
+	foreach($emp as $em) {
+		$emp_bt=app()->db->createCommand("SELECT price a from v_budget where tbl='employees' and tblid='".$em->id."' and budget='".budget()."' and tblcolumn='salary'")->queryAll();
+	//echo $emp_bt[0][a]." ".$em->employee."<br>";
+		$n=$em->id." - ".$em->checkno." - ".$em->employee." - ".$em->designation;
+		$af=Items::model()->findByAttributes(array('accountcode'=>105,'name'=>$n));
+		if($af==null) {
+			$af=new Items;
+			$af->attributes=array('accountcode'=>105,'name'=>$n);
+			$af->save();
+		}
+		$ap=ItemsPrices::model()->findByAttributes(array('item'=>$af->id,'budget'=>budget()));		
+		if($ap==null)
+			$ap=new ItemsPrices;
+		
+		$tssname=Items::model()->findByAttributes(array('accountcode'=>105,'name'=>"TSS".$em->salary_scale));
+		if($tssname==null)
+			$tssname=Items::model()->findByAttributes(array('accountcode'=>105,'name'=>"TSS".$em->salary_scale.$em->spine));
+		if($tssname==null)  {
+			echo "tss is null for ".$em->salary_scale." and ".$em->spine."<br>";
+		} else {
+			$tssprice=ItemsPrices::model()->findByAttributes(array('item'=>$tssname->id,'budget'=>budget()));		
+		}
+		$tsspricebudget= $tssprice ? $tssprice->price : 0;
+		
+		
+		//$tssitem=ItemsPrices::model()->findByAttributes(array('accountcode'=>105,'name'=>$n));
+		$ap->attributes=array('currency'=>'1','item'=>$af->id,'price'=>$tsspricebudget);
+		//dump($ap->attributes,false);
+		if(!$ap->save()) dump($ap->errors);
+		$bt=Budget::model()->findByAttributes(array('budget'=>budget(),'item'=>$af->id));
+		if($em->contract==1) {
+			if($bt==null) $bt=new Budget;
+			$bt->attributes=array('budget'=>budget(),'item'=>$af->id,'dept'=>$em->section,'qty'=>1,'tbl'=>'employees','tblcolumn'=>'medical','tblid'=>$em->id,'createdby'=>user()->id,'createdon'=>date("Y-m-d"),'dateneeded'=>date("Y-m-d"),'period'=>1);
+			$bt->save();
+		} else
+			if($bt !=null) $bt->delete();
+	}
+}
+
 function leave_calc() {
 	$emp=Employees::model()->findAll(' budget='.budget());
+	app()->db->createCommand("delete from budget where tbl='employees' and tblcolumn='leave' and budget='".budget()."'")->execute();
 	foreach($emp as $em) {
 		$emp_bt=app()->db->createCommand("SELECT price a from v_budget where tbl='employees' and tblid='".$em->id."' and budget='".budget()."' and tblcolumn='salary'")->queryAll();
 	//echo $emp_bt[0][a]." ".$em->employee."<br>";
@@ -657,11 +699,12 @@ function leave_calc() {
 }
 
 function gratuity_calc() {
+	app()->db->createCommand("delete from budget where tbl='employees' and tblcolumn='gratuity' and budget='".budget()."'")->execute();
 	$emp=Employees::model()->findAll(' budget='.budget());
 	foreach($emp as $em) {
 		$emp_bt=app()->db->createCommand("SELECT sum(amount) a from v_budget where tbl='employees' and tblid='".$em->id."' and budget='".budget()."' and tblcolumn='salary'")->queryAll();
 		//echo "SELECT sum(amount) a from v_budget where tbl='employees' and tblid='".$em->id."' and budget='".budget()."' and tblcolumn='salary'";
-//		exit;
+		//exit;
 		//echo $emp_bt[0][a]."<br>";
 		$n=$em->id." - ".$em->checkno." - ".$em->employee." - ".$em->designation;
 		$af=Items::model()->findByAttributes(array('accountcode'=>79,'name'=>$n));
@@ -705,6 +748,7 @@ function nssf_calc() {
 		'weekend_transport'
 	);
 	$emp=Employees::model()->findAll(' budget='.budget());
+	//echo budget();exit;
 	foreach($emp as $em) {
 		$n=$em->id." - ".$em->checkno." - ".$em->employee." - ".$em->designation;
 		$emp_bt=app()->db->createCommand("SELECT sum(amount) a from v_budget where tbl='employees' and tblid='".$em->id."' and budget='".budget()."' and tblcolumn in ('".implode("','",$nssf)."')")->queryAll();
@@ -777,14 +821,9 @@ function rgeneral() {
 }
 
 function report_440006() {
-	if(is_dept_head() && !corporate_report()){
-		$ad=" and deptid=(select department from sections where id='".user()->dept[id]."')";
-		$mysecs=Yii::app()->db->createCommand("SELECT distinct section,itemname from v_subsistence where budget='".user()->budget['id']."' and  accountcode='".$_REQUEST['c']."' $ad order by sectionname asc")->queryAll();
-	}else{
-		$ad=" and section='".user()->dept[id]."'";
-		$mysecs=Yii::app()->db->createCommand("SELECT distinct section,itemname from v_subsistence where budget='".user()->budget['id']."' and  accountcode='".$_REQUEST['c']."' $ad order by sectionname asc")->queryAll();
-	}
-	echo "<h2> Details for ".$mysecs[0][itemname]."</h2>";
+
+	$mysecs=Yii::app()->db->createCommand("SELECT distinct section,itemname from v_subsistence where budget='".user()->budget['id']."' and  accountcode='".$_REQUEST['c']."' order by sectionname asc")->queryAll();
+echo "<h2> Details for ".$mysecs[0][itemname]."</h2>";
 	foreach($mysecs as $mysec) {
 		$cs=Yii::app()->db->createCommand("select * from v_subsistence where budget='".user()->budget['id']."' and section='".$mysec[section]."' and accountcode='".$_REQUEST['c']."'")->queryAll();
 		echo "<h3>".$cs[0][dept].": ".$cs[0][sectionname]."</h3>";

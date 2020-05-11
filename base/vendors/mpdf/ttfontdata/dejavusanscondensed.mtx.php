@@ -2,18 +2,18 @@
 $name='DejaVuSansCondensed';
 $type='TTF';
 $desc=array (
-  'Ascent' => 928.0,
-  'Descent' => -236.0,
-  'CapHeight' => 928.0,
+  'Ascent' => 928,
+  'Descent' => -236,
+  'CapHeight' => 928,
   'Flags' => 4,
   'FontBBox' => '[-918 -415 1513 1167]',
-  'ItalicAngle' => 0.0,
-  'StemV' => 87.0,
-  'MissingWidth' => 540.0,
+  'ItalicAngle' => 0,
+  'StemV' => 87,
+  'MissingWidth' => 540,
 );
 $up=-63;
 $ut=44;
-$ttffile='E:/sites/BIS_Prodn/base/vendors/mpdf/ttfonts/DejaVuSansCondensed.ttf';
+$ttffile='/Library/WebServer/Documents/bis/protected/vendors/mpdf/ttfonts/DejaVuSansCondensed.ttf';
 $TTCfontID='0';
 $originalsize=555944;
 $sip=false;

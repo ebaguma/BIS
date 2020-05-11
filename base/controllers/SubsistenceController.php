@@ -72,7 +72,7 @@ class SubsistenceController extends Controller
 			}
 			$jarray .="<div id='itemprice0'></div>";
 
-	       $ht .=' <script type="text/javascript" src="/bis/assets/dc899cdc/jquery.js"></script>
+	       $ht .=' <script type="text/javascript" src="/assets/dc899cdc/jquery.js"></script>
 	        <script type="text/javascript">
 			function test(dd,v) {
 				document.getElementById("price"+dd).innerHTML=accounting.formatNumber(document.getElementById("itemprice"+v).innerHTML);
@@ -147,7 +147,7 @@ class SubsistenceController extends Controller
 		}
 		$jarray .="<div id='itemprice0'></div><div id='itemcur0'>UGX</div><div id='itemrate0'>1</div>";
 
-       $ht='<script type="text/javascript" src="/bis/assets/dc899cdc/jquery.js"></script>
+       $ht='<script type="text/javascript" src="/assets/dc899cdc/jquery.js"></script>
         <script type="text/javascript">
 		function test(dd,v) {
 			document.getElementById("price"+dd).innerHTML=accounting.formatNumber(document.getElementById("itemprice"+v).innerHTML);

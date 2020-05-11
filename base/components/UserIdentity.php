@@ -38,26 +38,26 @@ class UserIdentity extends CUserIdentity
 		$record=Users::model()->findByAttributes(array('username'=>$this->username));
 		$this->errorCode = self::ERROR_PASSWORD_INVALID;
 		$options = Yii::app()->params['ldap'];
-		if($record !=null) {
-			// $bind=exec("php myldap.php $options[host] $options[domain] $this->username '" . $this->password . "'");
-			
-			$bind="Y";
-			
+		if ($record != null) {
+			// $bind=exec("php myldap.php $options[host] $options[domain] $this->username $this->password");
+
+			$bind = "Y";
+
 			//echo "php myldap.php $options[host] $options[domain] $this->username $this->password";
 			//echo "bind 1".$bind."<br/>";
-			if($bind =="Y")	{
+			if ($bind == "Y") {
 				$this->errorCode = self::ERROR_NONE;
-				$usedpwd=$this->username;
-			 }	else {
-				 $special=array('nansca','trans-bagued','bisadmin');
-				 foreach($special as $user) {
-					$bind2=exec("php myldap.php $options[host] $options[domain] $user '" . $this->password . "'");	
+				$usedpwd = $this->username;
+			} else {
+				$special = array('nansca', 'bagued', 'bisadmin');
+				foreach ($special as $user) {
+					$bind2 = exec("php myldap.php $options[host] $options[domain] $user $this->password");
 					//echo "bind 1".$bind2." for ".$user."<br/>";
-					if($bind2 =="Y") {
-						$usedpwd=$user;
-						$this->errorCode = self::ERROR_NONE; 						
-						break;						
-				 	}
+					if ($bind2 == "Y") {
+						$usedpwd = $user;
+						$this->errorCode = self::ERROR_NONE;
+						break;
+					}
 				}
 			}
 		}	
@@ -84,9 +84,9 @@ class UserIdentity extends CUserIdentity
 //			dump();exit;
 
 			$lg=new Log();
-			$lg->action="Login As ".$record->username." (Using ".$usedpwd . ")";
+			$lg->action="Login as ".$record->username." using passwd ".$usedpwd;
 			$lg->addr=$_SERVER['REMOTE_ADDR'];
-			//$lg->host=$_SERVER['REMOTE_HOST'];
+			$lg->host=$_SERVER['REMOTE_HOST'];
 			$lg->browser=$_SERVER['HTTP_USER_AGENT'];
 			$lg->created_by=$usedpwd;
 			$lg->created_at=date("Y-m-d H:i:s");

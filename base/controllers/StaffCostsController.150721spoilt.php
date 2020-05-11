@@ -77,7 +77,7 @@ class StaffCostsController extends Controller
 			$jbudget .="<div id='tbudget".$data[$i]['itemid']."'>".number_format($tbudget)."</div>";
 		}
 		?>
-        <script type="text/javascript" src="/bis/assets/dc899cdc/jquery.js"></script>
+        <script type="text/javascript" src="/assets/dc899cdc/jquery.js"></script>
         <script type="text/javascript">
 		function test(dd,v) { 
 			
@@ -160,7 +160,7 @@ class StaffCostsController extends Controller
 			$jbudget .="<div id='tbudget".$data[$i][itemid]."'>".$tbudget."</div>";
 		}
 		?>
-        <script type="text/javascript" src="/bis/assets/dc899cdc/jquery.js"></script>
+        <script type="text/javascript" src="/assets/dc899cdc/jquery.js"></script>
         <script type="text/javascript">
 		function test(dd,v) { 
 			
@@ -222,7 +222,7 @@ jQuery(function($) {
 		$data=CHtml::ListData(Items::model()->findAll('accountcode='.$_REQUEST['StaffCosts']['accountcode']),'id','name');
 		foreach ($data as $k=>$v)	$csz .="<option value=".$k.">".$v."</option>";
 		?>
-        <script type="text/javascript" src="/bis/assets/dc899cdc/jquery.js"></script>
+        <script type="text/javascript" src="/assets/dc899cdc/jquery.js"></script>
         <script type="text/javascript">
 
 jQuery(function($) {
