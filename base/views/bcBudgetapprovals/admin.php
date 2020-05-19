@@ -45,11 +45,14 @@
 			 * and approver_rolealias ".$not." in  ('".implode(myroles(),"','")."')
 			 ***/
 
-			if (!isset($_REQUEST['q'])) {
+			$c = app()->db->createCommand("SELECT * from v_bc_approvals where ((nextapprover_id ='" . user()->id . "'  and nextapprover_rolealias in ('" . implode(myroles(), "','") . "')) or (nextapprover_id is null and nextapprover_rolealias in ('" . implode(myroles(), "','") . "')) or nextapprover_id ='" . user()->id . "') and nextapprover_done is null order by requestdate desc")->queryAll();
+
+			/***
+			 if (!isset($_REQUEST['q'])) {
 				$c = app()->db->createCommand("SELECT * from v_bc_approvals where (nextapprover_id ='" . user()->id . "'  or nextapprover_rolealias in ('" . implode(myroles(), "','") . "'))" . " and decision <> 'QUERY' and nextapprover_done is null order by requestdate desc")->queryAll();
 			} else {
 				$c = app()->db->createCommand("SELECT * from v_bc_approvals where nextapprover_id ='" . user()->id . "' and decision = 'QUERY' and nextapprover_done is null order by requestdate desc")->queryAll();
-			}
+			}***/
 
 			//$c = app()->db->createCommand("SELECT * from v_bc_approvals where (nextapprover_id ='" . user()->id . "'  or nextapprover_rolealias in ('" . implode(myroles(), "','") . "')) and nextapprover_done is null order by requestdate desc")->queryAll();
 
@@ -87,7 +90,7 @@
 	<div style="margin:10px">
 		<?php
 
-		echo "<center><a href='?r=bcBudgetapprovals/admin&amp;q=queried'>View Queried Requests</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?r=bcBudgetapprovals/admin'>Back to Approvals</a></center>";
+		// echo "<center><a href='?r=bcBudgetapprovals/admin&amp;q=queried'>View Queried Requests</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='?r=bcBudgetapprovals/admin'>Back to Approvals</a></center>";
 
 		?>
 	</div>

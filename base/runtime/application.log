@@ -9801,3 +9801,14 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/
 ---
+2020/05/14 13:28:22 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\sites\BIS_Dev\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\sites\BIS_Dev\yii\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 D:\sites\BIS_Dev\index.php(29): CModule->__get('db')
+#5 {main}
+REQUEST_URI=/
+---
