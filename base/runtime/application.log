@@ -9812,3 +9812,1312 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/
 ---
+2020/05/21 13:26:56 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'created_by' at row 1. The SQL statement executed was: INSERT INTO `log` (`action`, `addr`, `host`, `browser`, `created_by`, `created_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in D:\sites\BIS_Dev\base\components\UserIdentity.php (93)
+in D:\sites\BIS_Dev\base\models\LoginForm.php (52)
+2020/05/21 13:26:56 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'created_by' at row 1. The SQL statement executed was: INSERT INTO `log` (`action`, `addr`, `host`, `browser`, `created_by`, `created_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5) in D:\sites\BIS_Dev\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 D:\sites\BIS_Dev\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 D:\sites\BIS_Dev\base\components\UserIdentity.php(93): CActiveRecord->save()
+#3 D:\sites\BIS_Dev\base\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 D:\sites\BIS_Dev\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 D:\sites\BIS_Dev\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 D:\sites\BIS_Dev\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), Array)
+#7 D:\sites\BIS_Dev\base\controllers\SiteController.php(238): CModel->validate()
+#8 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#13 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\sites\BIS_Dev\index.php(36): CApplication->run()
+#16 {main}
+REQUEST_URI=/?r=site/login
+HTTP_REFERER=http://bis.local/?r=site/login
+---
+2020/05/27 10:39:12 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'created_by' at row 1. The SQL statement executed was: INSERT INTO `log` (`action`, `addr`, `host`, `browser`, `created_by`, `created_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in D:\sites\BIS_Dev\base\components\UserIdentity.php (93)
+in D:\sites\BIS_Dev\base\models\LoginForm.php (52)
+2020/05/27 10:39:12 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'created_by' at row 1. The SQL statement executed was: INSERT INTO `log` (`action`, `addr`, `host`, `browser`, `created_by`, `created_at`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5) in D:\sites\BIS_Dev\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 D:\sites\BIS_Dev\yii\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 D:\sites\BIS_Dev\base\components\UserIdentity.php(93): CActiveRecord->save()
+#3 D:\sites\BIS_Dev\base\models\LoginForm.php(52): UserIdentity->authenticate()
+#4 D:\sites\BIS_Dev\yii\framework\validators\CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 D:\sites\BIS_Dev\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 D:\sites\BIS_Dev\yii\framework\base\CModel.php(159): CValidator->validate(Object(LoginForm), Array)
+#7 D:\sites\BIS_Dev\base\controllers\SiteController.php(238): CModel->validate()
+#8 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#13 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\sites\BIS_Dev\index.php(36): CApplication->run()
+#16 {main}
+REQUEST_URI=/?r=site/login
+HTTP_REFERER=http://bis.local/?r=site/login
+---
+2020/06/17 19:25:23 [error] [exception.CDbException] CDbException: Table "bc_budgetrequests" does not have a column named "request". in D:\sites\BIS_Dev\yii\framework\db\schema\CDbCommandBuilder.php:694
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\db\ar\CActiveRecord.php(1518): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 D:\sites\BIS_Dev\base\controllers\BcBudgetrequestsController.php(180): CActiveRecord->findByAttributes(Array)
+#2 D:\sites\BIS_Dev\base\controllers\BcBudgetrequestsController.php(156): BcBudgetrequestsController->approve('attachments not...', 'QUERY', '36489', '125')
+#3 [internal function]: BcBudgetrequestsController->actionView('36489')
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(BcBudgetrequestsController), Array)
+#5 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(BcBudgetrequestsController), Object(ReflectionMethod), Array)
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 D:\sites\BIS_Dev\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 D:\sites\BIS_Dev\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 D:\sites\BIS_Dev\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\sites\BIS_Dev\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\sites\BIS_Dev\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#15 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('bcBudgetrequest...')
+#16 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\sites\BIS_Dev\index.php(36): CApplication->run()
+#18 {main}
+REQUEST_URI=/index.php?r=bcBudgetrequests/view&id=36489
+HTTP_REFERER=http://bis.local/index.php?r=bcBudgetrequests/view&id=36489
+---
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/02 21:09:15 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\BIS_Dev\base\controllers\ItemsController.php (222)
+in D:\sites\BIS_Dev\index.php (36)
+2020/07/14 10:29:56 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\sites\BIS_Dev\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\sites\BIS_Dev\yii\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 D:\sites\BIS_Dev\index.php(29): CModule->__get('db')
+#5 {main}
+REQUEST_URI=/
+---
+2020/08/04 21:40:18 [error] [php] Undefined index: constantname (D:\sites\BIS_Dev\index.php:31)
+Stack trace:
+#0 D:\sites\BIS_Dev\index.php(31): CWebApplication->handleError()
+REQUEST_URI=/
+in D:\sites\BIS_Dev\index.php (31)
+2020/08/04 21:42:29 [error] [php] Undefined index: constantname (D:\sites\BIS_Dev\index.php:31)
+Stack trace:
+#0 D:\sites\BIS_Dev\index.php(31): CWebApplication->handleError()
+REQUEST_URI=/
+2020/08/04 21:44:03 [error] [php] Undefined index: REMOTE_HOST (D:\sites\BIS_Dev\base\components\UserIdentity.php:89)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 D:\sites\BIS_Dev\yii\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 D:\sites\BIS_Dev\base\controllers\SiteController.php(238): LoginForm->validate()
+#3 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/?r=site/login
+2020/08/04 21:45:22 [error] [php] Undefined index: REMOTE_HOST (D:\sites\BIS_Dev\base\components\UserIdentity.php:89)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 D:\sites\BIS_Dev\yii\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 D:\sites\BIS_Dev\base\controllers\SiteController.php(238): LoginForm->validate()
+#3 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/?r=site/login
+2020/08/04 21:45:58 [error] [php] Undefined index: REMOTE_HOST (D:\sites\BIS_Dev\base\components\UserIdentity.php:89)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 D:\sites\BIS_Dev\yii\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 D:\sites\BIS_Dev\base\controllers\SiteController.php(238): LoginForm->validate()
+#3 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/?r=site/login
+in D:\sites\BIS_Dev\base\components\UserIdentity.php (89)
+in D:\sites\BIS_Dev\base\models\LoginForm.php (52)
+2020/08/04 21:50:13 [error] [php] Undefined index: REMOTE_HOST (D:\sites\BIS_Dev\base\components\UserIdentity.php:89)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute()
+#1 D:\sites\BIS_Dev\yii\framework\base\CModel.php(159): CInlineValidator->validate()
+#2 D:\sites\BIS_Dev\base\controllers\SiteController.php(238): LoginForm->validate()
+#3 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#4 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/?r=site/login
+in D:\sites\BIS_Dev\base\components\UserIdentity.php (89)
+in D:\sites\BIS_Dev\base\models\LoginForm.php (52)
+2020/08/04 21:51:37 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/index.php
+in D:\sites\BIS_Dev\base\globals.php (150)
+in D:\sites\BIS_Dev\base\views\site\index.php (40)
+2020/08/04 21:56:06 [error] [exception.CDbException] could not find driver
+2020/08/04 21:56:06 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection. in D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php:388
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\sites\BIS_Dev\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\sites\BIS_Dev\yii\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 D:\sites\BIS_Dev\index.php(29): CModule->__get('db')
+#5 {main}
+REQUEST_URI=/index.php
+HTTP_REFERER=http://bis.local/?r=site/login
+---
+2020/08/04 21:56:07 [error] [exception.CDbException] could not find driver
+2020/08/04 21:56:10 [error] [exception.CDbException] could not find driver
+2020/08/04 21:56:10 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection. in D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php:388
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\sites\BIS_Dev\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\sites\BIS_Dev\yii\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 D:\sites\BIS_Dev\index.php(29): CModule->__get('db')
+#5 {main}
+REQUEST_URI=/?r=site/login
+---
+2020/08/04 21:56:10 [error] [exception.CDbException] could not find driver
+2020/08/04 21:56:17 [error] [exception.CDbException] could not find driver
+2020/08/04 21:56:17 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection. in D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php:388
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\sites\BIS_Dev\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\sites\BIS_Dev\yii\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 D:\sites\BIS_Dev\index.php(29): CModule->__get('db')
+#5 {main}
+REQUEST_URI=/
+---
+2020/08/04 21:56:17 [error] [exception.CDbException] could not find driver
+2020/08/04 21:56:50 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/
+2020/08/04 21:56:55 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/
+2020/08/04 21:57:25 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/
+2020/08/04 21:57:41 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/
+2020/08/04 21:57:57 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/
+2020/08/04 21:59:16 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/
+2020/08/04 21:59:18 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/
+2020/08/04 22:00:34 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/
+2020/08/04 22:00:37 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/
+2020/08/04 22:02:06 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/
+2020/08/04 22:02:08 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/
+2020/08/04 22:03:08 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/index.php
+2020/08/04 22:03:48 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/index
+2020/08/04 22:04:11 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/index
+in D:\sites\BIS_Dev\base\globals.php (150)
+in D:\sites\BIS_Dev\base\views\site\index.php (40)
+2020/08/04 22:04:12 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/index
+in D:\sites\BIS_Dev\base\globals.php (150)
+in D:\sites\BIS_Dev\base\views\site\index.php (40)
+2020/08/04 22:12:28 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/index
+in D:\sites\BIS_Dev\base\globals.php (150)
+in D:\sites\BIS_Dev\base\views\site\index.php (40)
+2020/08/04 22:12:29 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/index
+in D:\sites\BIS_Dev\base\globals.php (150)
+in D:\sites\BIS_Dev\base\views\site\index.php (40)
+2020/08/04 22:12:31 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/index.php
+in D:\sites\BIS_Dev\base\globals.php (150)
+in D:\sites\BIS_Dev\base\views\site\index.php (40)
+2020/08/04 22:12:33 [error] [php] Undefined variable: d (D:\sites\BIS_Dev\base\views\layouts\main.php:120)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#1 D:\sites\BIS_Dev\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#2 D:\sites\BIS_Dev\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#4 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(300): SiteController->endWidget()
+#5 D:\sites\BIS_Dev\base\views\layouts\column1.php(6): SiteController->endContent()
+#6 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(126): require()
+#7 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#8 D:\sites\BIS_Dev\yii\framework\web\CController.php(784): SiteController->renderFile()
+#9 D:\sites\BIS_Dev\base\controllers\SiteController.php(242): SiteController->render()
+#10 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#11 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#13 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#14 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#15 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/?r=site/login
+in D:\sites\BIS_Dev\base\views\layouts\main.php (120)
+in D:\sites\BIS_Dev\base\views\layouts\column1.php (6)
+2020/08/04 22:13:03 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/index.php
+in D:\sites\BIS_Dev\base\globals.php (150)
+in D:\sites\BIS_Dev\base\views\site\index.php (40)
+2020/08/04 22:13:42 [error] [php] Use of undefined constant HOD - assumed 'HOD' (this will throw an Error in a future version of PHP) (D:\sites\BIS_Dev\base\globals.php:150)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 D:\sites\BIS_Dev\yii\framework\web\CController.php(869): SiteController->renderFile()
+#2 D:\sites\BIS_Dev\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#3 D:\sites\BIS_Dev\base\controllers\SiteController.php(85): SiteController->render()
+#4 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#5 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#7 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#9 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/index.php
+in D:\sites\BIS_Dev\base\globals.php (150)
+in D:\sites\BIS_Dev\base\views\site\index.php (40)
+2020/08/04 22:13:52 [error] [php] Undefined variable: d (D:\sites\BIS_Dev\base\views\layouts\main.php:120)
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#1 D:\sites\BIS_Dev\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#2 D:\sites\BIS_Dev\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#4 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(300): SiteController->endWidget()
+#5 D:\sites\BIS_Dev\base\views\layouts\column1.php(6): SiteController->endContent()
+#6 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(126): require()
+#7 D:\sites\BIS_Dev\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#8 D:\sites\BIS_Dev\yii\framework\web\CController.php(784): SiteController->renderFile()
+#9 D:\sites\BIS_Dev\base\controllers\SiteController.php(242): SiteController->render()
+#10 D:\sites\BIS_Dev\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#11 D:\sites\BIS_Dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 D:\sites\BIS_Dev\yii\framework\web\CController.php(286): SiteController->runAction()
+#13 D:\sites\BIS_Dev\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#14 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#15 D:\sites\BIS_Dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 D:\sites\BIS_Dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\sites\BIS_Dev\index.php(36): CWebApplication->run()
+REQUEST_URI=/?r=site/login
+in D:\sites\BIS_Dev\base\views\layouts\main.php (120)
+in D:\sites\BIS_Dev\base\views\layouts\column1.php (6)
+2020/08/05 19:20:25 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\sites\BIS_Dev\yii\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\sites\BIS_Dev\yii\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\sites\BIS_Dev\yii\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 D:\sites\BIS_Dev\index.php(29): CModule->__get('db')
+#5 {main}
+REQUEST_URI=/
+---
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:57:30 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:59:44 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:59:44 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:59:44 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:59:44 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:59:44 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:59:44 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 20:59:44 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:04:08 [error] [exception.CException] CException: Class name "VehicleTypes" does not match class file "D:\sites\bis_dev\base\models\VehicleTypes.php". in D:\sites\bis_dev\yii\framework\YiiBase.php:418
+Stack trace:
+#0 [internal function]: YiiBase::autoload('VehicleTypes')
+#1 D:\sites\bis_dev\yii\framework\db\ar\CActiveRecord.php(395): spl_autoload_call('VehicleTypes')
+#2 D:\sites\bis_dev\yii\framework\db\ar\CActiveFinder.php(182): CActiveRecord::model('VehicleTypes')
+#3 D:\sites\bis_dev\yii\framework\db\ar\CActiveFinder.php(230): CActiveFinder->getModel('VehicleTypes')
+#4 D:\sites\bis_dev\yii\framework\db\ar\CActiveFinder.php(296): CActiveFinder->buildJoinTree(Object(CJoinElement), 'vehicletype0')
+#5 D:\sites\bis_dev\yii\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree(Object(CJoinElement), Array)
+#6 D:\sites\bis_dev\yii\framework\db\ar\CActiveRecord.php(909): CActiveFinder->__construct(Object(Vehicles), Array)
+#7 D:\sites\bis_dev\yii\framework\db\ar\CActiveRecord.php(1604): CActiveRecord->getActiveFinder(Array)
+#8 D:\sites\bis_dev\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#9 D:\sites\bis_dev\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#10 D:\sites\bis_dev\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#11 D:\sites\bis_dev\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#12 D:\sites\bis_dev\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#13 D:\sites\bis_dev\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#14 D:\sites\bis_dev\yii\framework\web\CBaseController.php(147): CGridView->init()
+#15 D:\sites\bis_dev\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#16 D:\sites\bis_dev\base\views\vehicles\admin.php(39): CBaseController->widget('zii.widgets.gri...', Array)
+#17 D:\sites\bis_dev\yii\framework\web\CBaseController.php(126): require('D:\\sites\\bis_de...')
+#18 D:\sites\bis_dev\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\sites\\bis_de...', Array, true)
+#19 D:\sites\bis_dev\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\sites\\bis_de...', Array, true)
+#20 D:\sites\bis_dev\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#21 D:\sites\bis_dev\base\controllers\VehiclesController.php(177): CController->render('admin', Array)
+#22 D:\sites\bis_dev\yii\framework\web\actions\CInlineAction.php(49): VehiclesController->actionAdmin()
+#23 D:\sites\bis_dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#24 D:\sites\bis_dev\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#25 D:\sites\bis_dev\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#26 D:\sites\bis_dev\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#27 D:\sites\bis_dev\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#28 D:\sites\bis_dev\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#29 D:\sites\bis_dev\yii\framework\web\CController.php(291): CFilterChain->run()
+#30 D:\sites\bis_dev\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#31 D:\sites\bis_dev\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#32 D:\sites\bis_dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vehicles/admin')
+#33 D:\sites\bis_dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#34 D:\sites\bis_dev\index.php(36): CApplication->run()
+#35 {main}
+REQUEST_URI=/index.php?r=vehicles/admin
+HTTP_REFERER=http://bis.local/index.php?r=vehicles/create
+---
+2021/01/11 21:04:17 [error] [exception.CException] CException: Class name "VehicleTypes" does not match class file "D:\sites\bis_dev\base\models\VehicleTypes.php". in D:\sites\bis_dev\yii\framework\YiiBase.php:418
+Stack trace:
+#0 [internal function]: YiiBase::autoload('VehicleTypes')
+#1 D:\sites\bis_dev\yii\framework\db\ar\CActiveRecord.php(395): spl_autoload_call('VehicleTypes')
+#2 D:\sites\bis_dev\yii\framework\db\ar\CActiveFinder.php(182): CActiveRecord::model('VehicleTypes')
+#3 D:\sites\bis_dev\yii\framework\db\ar\CActiveFinder.php(230): CActiveFinder->getModel('VehicleTypes')
+#4 D:\sites\bis_dev\yii\framework\db\ar\CActiveFinder.php(296): CActiveFinder->buildJoinTree(Object(CJoinElement), 'vehicletype0')
+#5 D:\sites\bis_dev\yii\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree(Object(CJoinElement), Array)
+#6 D:\sites\bis_dev\yii\framework\db\ar\CActiveRecord.php(909): CActiveFinder->__construct(Object(Vehicles), Array)
+#7 D:\sites\bis_dev\yii\framework\db\ar\CActiveRecord.php(1604): CActiveRecord->getActiveFinder(Array)
+#8 D:\sites\bis_dev\yii\framework\web\CActiveDataProvider.php(228): CActiveRecord->count(Object(CDbCriteria))
+#9 D:\sites\bis_dev\yii\framework\web\CDataProvider.php(224): CActiveDataProvider->calculateTotalItemCount()
+#10 D:\sites\bis_dev\yii\framework\web\CActiveDataProvider.php(178): CDataProvider->getTotalItemCount()
+#11 D:\sites\bis_dev\yii\framework\web\CDataProvider.php(168): CActiveDataProvider->fetchData()
+#12 D:\sites\bis_dev\yii\framework\zii\widgets\CBaseListView.php(111): CDataProvider->getData()
+#13 D:\sites\bis_dev\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#14 D:\sites\bis_dev\yii\framework\web\CBaseController.php(147): CGridView->init()
+#15 D:\sites\bis_dev\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#16 D:\sites\bis_dev\base\views\vehicles\admin.php(39): CBaseController->widget('zii.widgets.gri...', Array)
+#17 D:\sites\bis_dev\yii\framework\web\CBaseController.php(126): require('D:\\sites\\bis_de...')
+#18 D:\sites\bis_dev\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\sites\\bis_de...', Array, true)
+#19 D:\sites\bis_dev\yii\framework\web\CController.php(869): CBaseController->renderFile('D:\\sites\\bis_de...', Array, true)
+#20 D:\sites\bis_dev\yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#21 D:\sites\bis_dev\base\controllers\VehiclesController.php(177): CController->render('admin', Array)
+#22 D:\sites\bis_dev\yii\framework\web\actions\CInlineAction.php(49): VehiclesController->actionAdmin()
+#23 D:\sites\bis_dev\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#24 D:\sites\bis_dev\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#25 D:\sites\bis_dev\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#26 D:\sites\bis_dev\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#27 D:\sites\bis_dev\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#28 D:\sites\bis_dev\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#29 D:\sites\bis_dev\yii\framework\web\CController.php(291): CFilterChain->run()
+#30 D:\sites\bis_dev\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#31 D:\sites\bis_dev\yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#32 D:\sites\bis_dev\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('vehicles/admin')
+#33 D:\sites\bis_dev\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#34 D:\sites\bis_dev\index.php(36): CApplication->run()
+#35 {main}
+REQUEST_URI=/index.php?r=vehicles/admin
+HTTP_REFERER=http://bis.local/index.php?r=vehicles/create
+---
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/01/11 21:10:39 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)
+2021/02/11 05:31:25 [warning] [application] Failed to set unsafe attribute "budget" of "ItemsPrices".
+in D:\sites\bis_dev\base\controllers\ItemsController.php (222)
+in D:\sites\bis_dev\index.php (36)

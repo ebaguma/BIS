@@ -28,7 +28,7 @@ if (ini_get('mbstring.func_overload') & 2) {
 // Define the constants
 $sc = Yii::app()->db->createCommand("Select * from roles")->queryAll();
 foreach ($sc as $rl) {
-    define($rl['constantname'], $rl['id']);
+    define($rl['rolename'], $rl['id']);
 }
 
 //Now you can run application

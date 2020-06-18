@@ -32,7 +32,7 @@ return array(
 // if you want to use SMTP, uncomment and configure lines below to your needs
 	'Mailer' => 'smtp',
 	//'Host' => 'mail.uetcl.com',
-	'Host' => '172.16.8.233',
+	'Host' => 'mail.uetcl.com',
 	'Port' => 25,
 //	'SMTPSecure' => 'ssl',
 	//'SMTPAuth' => true,

@@ -177,6 +177,7 @@ class BcBudgetrequestsController extends Controller
 				echo "Failed to Save! Please report this error to the administrator";
 				dump($m->getErrors());
 			}
+
 			$decsn = $decision == "REPLY" ? "QUERY" : $decision;
 			$m2 = new BcBudgetapprovals;
 			$newApproval = array(
@@ -244,14 +245,12 @@ class BcBudgetrequestsController extends Controller
 					$newApproval['nextapprover_level']	= $m->nextapprover_level;
 					$mailtitle = 'Query';
 
-
 					break;
 				case "REPLY":
 					$newApproval['nextapprover_role']	= $m->approver_role;
 					$newApproval['nextapprover_id']		= $m->approver_id;
 					$newApproval['nextapprover_level']	= $m->approver_level;
 					$mailtitle = 'Reply';
-
 
 					break;
 				case "RE-ASSIGN":
@@ -272,7 +271,19 @@ class BcBudgetrequestsController extends Controller
 					break;
 			}
 			$m2->attributes = $newApproval;
-			if (!$m2->save()) {
+			if ($m2->save()) {
+				// EDWIN: 17JUN2020 Fix for Reply Attachments:
+				$request = BcBudgetrequests::model()->findByPk($id);
+				$images = CUploadedFile::getInstancesByName('appendix');
+				if (isset($images) && count($images) > 0) {
+					foreach ($images as $image => $pic) {
+						// if (!$pic->saveAs(Yii::getPathOfAlias('webroot') . '/appendix/bc' . Yii::app()->user->budget['id'] . '/' . Yii::app()->user->id . '-' . $model->id . '-' . $m2->id . '-' . $pic->name)) {
+						if (!$pic->saveAs(Yii::getPathOfAlias('webroot') . '/appendix/bc' . $request->budget . '/' . Yii::app()->user->id . '-' . $request->id . '-' . $m2->id . '-' . $pic->name)) {
+							die("Could not save " . $pic->name . ". Please contact the administrator<br>");
+						}
+					}
+				}
+			} else {
 				echo "failed to save! the next approver will NOT be able to approve. Please send this error to the administrator";
 				dump($m2->getErrors());
 			}
@@ -317,18 +328,21 @@ class BcBudgetrequestsController extends Controller
 				$mail->setSubject('BIS Budget Check: ' . $mailtitle);
 				// if(!$mail->send()) print($mail->getError());
 			}
-		}
 
-		$model = BcBudgetrequests::model()->findByPk($id);
-		$images = CUploadedFile::getInstancesByName('appendix');
-		if (isset($images) && count($images) > 0) {
-			foreach ($images as $image => $pic) {
-				if (!$pic->saveAs(Yii::getPathOfAlias('webroot') . '/appendix/bc' . Yii::app()->user->budget['id'] . '/' . Yii::app()->user->id . '-' . $model->id . '-' . $m2->id . '-' . $pic->name)) {
-					die("Could not save " . $pic->name . ". Please contact the administrator<br>");
+			/***
+			$model = BcBudgetrequests::model()->findByPk($id);
+			$images = CUploadedFile::getInstancesByName('appendix');
+			if (isset($images) && count($images) > 0) {
+				foreach ($images as $image => $pic) {
+					// if (!$pic->saveAs(Yii::getPathOfAlias('webroot') . '/appendix/bc' . Yii::app()->user->budget['id'] . '/' . Yii::app()->user->id . '-' . $model->id . '-' . $m2->id . '-' . $pic->name)) {
+					if (!$pic->saveAs(Yii::getPathOfAlias('webroot') . '/appendix/bc' . $model->budget . '/' . Yii::app()->user->id . '-' . $model->id . '-' . $m2->id . '-' . $pic->name)) {
+						die("Could not save " . $pic->name . ". Please contact the administrator<br>");
+					}
 				}
-			}
+			}***/
 		}
 	}
+
 	public function actionEmail()
 	{
 		$mail = new YiiMailer();

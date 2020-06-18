@@ -145,7 +145,7 @@ return array(
         ),
         */
         'db'=>array(
-            'connectionString' => 'mysql:host=192.168.7.2;dbname=bis',
+            'connectionString' => 'mysql:host=192.168.7.2;dbname=bis_dev',
             'emulatePrepare' => true,
             'username' => 'application',
             'password' => 'application',
