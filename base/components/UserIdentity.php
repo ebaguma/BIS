@@ -34,8 +34,8 @@ class UserIdentity extends CUserIdentity
       }
       return !$this->errorCode;		
 		*/
-		
-		$record=Users::model()->findByAttributes(array('username'=>$this->username));
+
+		$record = Users::model()->findByAttributes(array('username' => $this->username));
 		$this->errorCode = self::ERROR_PASSWORD_INVALID;
 		$options = Yii::app()->params['ldap'];
 		if ($record != null) {
@@ -60,36 +60,35 @@ class UserIdentity extends CUserIdentity
 					}
 				}
 			}
-		}	
+		}
 		//exit;
-		if($this->errorCode == self::ERROR_NONE)
-		{
-			$this->id=$record->id;
+		if ($this->errorCode == self::ERROR_NONE) {
+			$this->id = $record->id;
 			$this->setState('details', $record);
-			$this->setState('passwd',$usedpwd);
-			$this->setState('budget',Budgets::model()->findByAttributes(array('current'=>'Yes')));
-			$stgs=Settings::model()->findAll();
-			$settin=array();
+			$this->setState('passwd', $usedpwd);
+			$this->setState('budget', Budgets::model()->findByAttributes(array('current' => 'Yes')));
+			$stgs = Settings::model()->findAll();
+			$settin = array();
 			foreach ($stgs as $stg)
-				$settin[$stg['name']]=$stg['value'];
-			$this->setState('settings',$settin);
-			$this->setState('dept',Sections::model()->findByAttributes(array('id'=>$record->dept)));
-			$qr=Yii::app()->db->createCommand("SELECT * from v_users_roles_active where user='".$record->id."'")->queryAll();
-			$roles=array();
-			if(count($qr)) 
-				foreach($qr as $rec)  
-					$roles[$rec['alias']]=$rec;
+				$settin[$stg['name']] = $stg['value'];
+			$this->setState('settings', $settin);
+			$this->setState('dept', Sections::model()->findByAttributes(array('id' => $record->dept)));
+			$qr = Yii::app()->db->createCommand("SELECT * from v_users_roles_active where user='" . $record->id . "'")->queryAll();
+			$roles = array();
+			if (count($qr))
+				foreach ($qr as $rec)
+					$roles[$rec['alias']] = $rec;
 			$this->setState('roles', $roles);
-			$this->errorCode=self::ERROR_NONE;
-//			dump();exit;
+			$this->errorCode = self::ERROR_NONE;
+			//			dump();exit;
 
-			$lg=new Log();
-			$lg->action="Login as ".$record->username." using passwd ".$usedpwd;
-			$lg->addr=$_SERVER['REMOTE_ADDR'];
-			$lg->host=$_SERVER['REMOTE_HOST'];
-			$lg->browser=$_SERVER['HTTP_USER_AGENT'];
-			$lg->created_by=$usedpwd;
-			$lg->created_at=date("Y-m-d H:i:s");
+			$lg = new Log();
+			$lg->action = "Login as " . $record->username . " using passwd " . $usedpwd;
+			$lg->addr = $_SERVER['REMOTE_ADDR'];
+			// $lg->host=$_SERVER['REMOTE_HOST'];
+			$lg->browser = $_SERVER['HTTP_USER_AGENT'];
+			$lg->created_by = $usedpwd;
+			$lg->created_at = date("Y-m-d H:i:s");
 			$lg->save();
 		}
 		return !$this->errorCode;
@@ -97,6 +96,6 @@ class UserIdentity extends CUserIdentity
 
 	public function getId()
 	{
-		return $this-> id;
+		return $this->id;
 	}
 }
