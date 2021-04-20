@@ -31,8 +31,6 @@ if ($_REQUEST['print'] == 1) {
 		<input type='hidden' name='r' value='bcItembudgets/accountcodes'>
 		<div class="search-form" style="display:block">
 			<div class='container'>
-				<?php // echo budget() . '<br/>' 
-				?>
 				<?php if (is_proc_officer() or is_manager_finance() or is_sys_admin() or is_sat() or is_pbfo()) { ?>
 					<div class='row'>
 						<div class='left'><?= CHtml::label('Section: ', false) ?> <small><em> (Leave blank to get all sections)</em></small></div>
@@ -185,20 +183,9 @@ if ($_REQUEST['print'] == 1) {
 
 <?php
 if ($model && $_REQUEST['item']) {
-	if (is_sat() || is_pbfo() || is_sys_admin()) {
-		$sql = "select distinct section,sectionname,dept,accountitem,itemname from v_bc_itembudgets where budget='" . budget() . "'  and item=" . $_REQUEST['item'] . ' order by dept,sectionname';
-		$rawData = Yii::app()->db->createCommand($sql)->queryAll();
-	} else {
-		if (is_dept_head()) {
-			$sql = "select distinct section,sectionname,dept,accountitem,itemname from v_bc_itembudgets where deptid='" . dept() . "'  and  budget='" . budget() . "'  and item=" . $_REQUEST['item'] . ' order by dept,sectionname';
-			$rawData = Yii::app()->db->createCommand($sql)->queryAll();
-		} else {
-			$sql = "select distinct section,sectionname,dept,accountitem,itemname from v_bc_itembudgets where section='" . section() . "'  and  budget='" . budget() . "'  and item=" . $_REQUEST['item'] . ' order by dept,sectionname';
-			$rawData = Yii::app()->db->createCommand($sql)->queryAll();
-		}
-	}
-
-
+	$sql = "select distinct section,sectionname,dept,accountitem,itemname from v_bc_itembudgets where budget='" . budget() . "'  and item=" . $_REQUEST['item'] . ' order by dept,sectionname';
+	//echo $sql;
+	$rawData = Yii::app()->db->createCommand($sql)->queryAll();
 ?>
 
 	<h3>Budget History for Item: <?= $rawData[0]['accountitem'] ?> - <?= $rawData[0]['itemname'] ?>
@@ -220,20 +207,20 @@ if ($model && $_REQUEST['item']) {
 					<tr>
 						<td><?= $r['dept'] ?> - <?= $r['sectionname'] ?></td>
 						<td><?=
-								Yii::app()->numberFormatter->formatCurrency(Yii::app()->db->createCommand("Select sum(amount) from v_bc_itembudgets where section='" . $r['section'] . "' and item='" . $_REQUEST['item'] . "' and budget=" . budget() . " and reason in (1)")->queryScalar(), '');
+							Yii::app()->numberFormatter->formatCurrency(Yii::app()->db->createCommand("Select sum(amount) from v_bc_itembudgets where section='" . $r['section'] . "' and item='" . $_REQUEST['item'] . "' and budget=" . budget() . " and reason in (1)")->queryScalar(), '');
 							//echo "Select sum(amount) from v_bc_itembudgets where section='".$r['section']."' and item='".$_REQUEST['item']."' and reason in (1)";
 							?></td>
 						<td><?=
-								number_format(Yii::app()->db->createCommand("Select sum(amount) from v_bc_itembudgets where section='" . $r['section'] . "' and item='" . $_REQUEST['item'] . "' and  budget=" . budget() . " and reason in (2,5,4)")->queryScalar());
+							number_format(Yii::app()->db->createCommand("Select sum(amount) from v_bc_itembudgets where section='" . $r['section'] . "' and item='" . $_REQUEST['item'] . "' and  budget=" . budget() . " and reason in (2,5,4)")->queryScalar());
 							?></td>
 						<td><?=
-								Yii::app()->numberFormatter->formatCurrency(Yii::app()->db->createCommand("Select sum(amount) from v_bc_itembudgets where section='" . $r['section'] . "' and item='" . $_REQUEST['item'] . "' and `status`='COMMITED' and  budget=" . budget() . " and reason in (3,6)")->queryScalar(), '');
+							Yii::app()->numberFormatter->formatCurrency(Yii::app()->db->createCommand("Select sum(amount) from v_bc_itembudgets where section='" . $r['section'] . "' and item='" . $_REQUEST['item'] . "' and `status`='COMMITED' and  budget=" . budget() . " and reason in (3,6)")->queryScalar(), '');
 							?></td>
 						<td><?=
-								number_format(Yii::app()->db->createCommand("Select sum(amount) from v_bc_itembudgets where section='" . $r['section'] . "' and item='" . $_REQUEST['item'] . "' and `status`='PENDING' and   budget=" . budget() . " and reason in (3,6)")->queryScalar());
+							number_format(Yii::app()->db->createCommand("Select sum(amount) from v_bc_itembudgets where section='" . $r['section'] . "' and item='" . $_REQUEST['item'] . "' and `status`='PENDING' and   budget=" . budget() . " and reason in (3,6)")->queryScalar());
 							?></td>
 						<td><?=
-								number_format(Yii::app()->db->createCommand("Select sum(amount) from v_bc_itembudgets where section='" . $r['section'] . "' and  budget=" . budget() . " and item='" . $_REQUEST['item'] . "' ")->queryScalar());
+							number_format(Yii::app()->db->createCommand("Select sum(amount) from v_bc_itembudgets where section='" . $r['section'] . "' and  budget=" . budget() . " and item='" . $_REQUEST['item'] . "' ")->queryScalar());
 							?></td>
 					</tr>
 				<?php		}
@@ -246,23 +233,8 @@ if ($model && $_REQUEST['item']) {
 
 	<?php
 	if ($model && $_REQUEST['accountcode'] && !$_REQUEST['item']) {
-		if (is_sat() || is_pbfo() || is_sys_admin()) {
-			$sql = "select distinct section, sectionname,dept from v_bc_itembudgets where budget='" . budget() . "'  and accountid = " . $_REQUEST['accountcode'] . ' order by dept,sectionname';
-			if ($_REQUEST['section']) 	$sql .= " and section=" . $_REQUEST['section'];
-			$rawData = Yii::app()->db->createCommand($sql)->queryAll();
-		} else {
-			if (is_dept_head()) {
-				$sql = "select distinct section, sectionname,dept from v_bc_itembudgets where deptid='" . dept() . "'  and  budget='" . budget() . "'  and accountid = " . $_REQUEST['accountcode'] . ' order by dept,sectionname';
-				if ($_REQUEST['section']) 	$sql .= " and section=" . $_REQUEST['section'];
-				$rawData = Yii::app()->db->createCommand($sql)->queryAll();
-			} else {
-				$sql = "select distinct section,sectionname,dept from v_bc_itembudgets where section='" . section() . "'  and  budget='" . budget() . "'  and accountid = " . $_REQUEST['accountcode'] . ' order by dept,sectionname';
-				if ($_REQUEST['section']) 	$sql .= " and section=" . $_REQUEST['section'];
-				$rawData = Yii::app()->db->createCommand($sql)->queryAll();
-			}
-		}
-
-
+		$sql = "select distinct section,sectionname,dept,accountitem from v_bc_itembudgets where budget='" . budget() . "'  and accountid ='" . $_REQUEST['accountcode'] . "' order by dept,sectionname";
+		$rawData = Yii::app()->db->createCommand($sql)->queryAll();
 	?>
 
 		<h3>Budget History for Account Code: <?= $rawData[0]['accountitem'] ?>
@@ -339,24 +311,13 @@ if ($model && $_REQUEST['item']) {
 
 		<?php
 		if ($model && $_REQUEST['costcentre'] && !$_REQUEST['item'] && !$_REQUEST['accountcode']) {
-			if (is_sat() || is_pbfo() || is_sys_admin()) {
-				$sql = "select distinct section, sectionname,dept from v_bc_itembudgets where budget='" . budget() . "'  and accountcode like '" . $_REQUEST['costcentre'] . "%' ";
-				if ($_REQUEST['section']) 	$sql .= " and section=" . $_REQUEST['section'];
-				$rawData = Yii::app()->db->createCommand($sql)->queryAll();
-			} else {
-				if (is_dept_head()) {
-					$sql = "select distinct section, sectionname,dept from v_bc_itembudgets where deptid='" . dept() . "'  and  budget='" . budget() . "'  and accountcode like '" . $_REQUEST['costcentre'] . "%' ";
-					if ($_REQUEST['section']) 	$sql .= " and section=" . $_REQUEST['section'];
-					$rawData = Yii::app()->db->createCommand($sql)->queryAll();
-				} else {
-					$sql = "select distinct section, sectionname,dept from v_bc_itembudgets where section='" . section() . "'  and  budget='" . budget() . "'  and accountcode like '" . $_REQUEST['costcentre'] . "%' ";
-					if ($_REQUEST['section']) 	$sql .= " and section=" . $_REQUEST['section'];
-					$rawData = Yii::app()->db->createCommand($sql)->queryAll();
-				}
-			}
-
-
-
+			//echo "we";
+			$sql = "select distinct section,sectionname,dept from v_bc_itembudgets where budget='" . budget() . "'  and accountcode like '" . $_REQUEST['costcentre'] . "%' ";
+			if ($_REQUEST['section']) 	$sql .= " and section=" . $_REQUEST['section'];
+			//$sql .=" order by dept,sectionname";
+			//echo $sql;
+			//exit;
+			$rawData = Yii::app()->db->createCommand($sql)->queryAll();
 		?>
 			<h3>Budget History for Cost Centre</h3>
 

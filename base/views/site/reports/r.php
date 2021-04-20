@@ -203,19 +203,43 @@ if ($_REQUEST['c']) {
 		case "440011": //Communication Equipment
 			report_440006();
 			break;
-		case "420001": //Repairs
-			r_repairs();
-			break;
-		case "420002": //Tyres/Batteries
-			r_tyres_battery();
-			break;
-		case "420003": //Service
-			r_service();
-			break;
-		case "430002": //Tyres/Batteries
-		case "430001": //Tyres/Batteries
-			r_fuel();
-			break;
+
+		case "420001":
+			if (budget() < 9) {
+				r_repairs();
+				break;
+			} else {
+				rgeneral();
+				break;
+			}
+
+		case "420002":
+			if (budget() < 9) {
+				r_tyres_battery();
+				break;
+			} else {
+				rgeneral();
+				break;
+			}
+		case "420003":
+			if (budget() < 9) {
+				r_service();
+				break;
+			} else {
+				rgeneral();
+				break;
+			}
+
+			// Fuel Account Codes				
+		case "430002":
+		case "430001":
+			if (budget() < 9) {
+				r_fuel();
+				break;
+			} else {
+				rgeneral();
+				break;
+			}
 		default:
 			rgeneral();
 	}
@@ -832,9 +856,10 @@ function rgeneral()
 		$ad = " and realdept=(select department from sections where id='" . user()->dept[id] . "')";
 	if (!is_dept_head() && !corporate_report())
 		$ad = " and dept='" . user()->dept[id] . "'";
-	// EDWIN (31/03/2021): Human Resource	
-	if (is_hr() && !corporate_report())
+	// Start: EDWIN (31/03/2021) - Human Resource	
+	if (is_hr() && !corporate_report() && $_REQUEST['p'] == 40)
 		$ad = "";
+	// End: EDWIN	
 	$codes = Yii::app()->db->createCommand("select * from v_budget where accountcode = '" . $cs['0']['id'] . "' and budget='" . user()->budget['id'] . "' $ad order by realdept,dept")->queryAll();
 	$tot = 0;
 	$ct = 0;
@@ -877,11 +902,13 @@ function rgeneral()
 
 function report_440006()
 {
-
-	$mysecs = Yii::app()->db->createCommand("SELECT distinct section,itemname from v_subsistence where budget='" . user()->budget['id'] . "' and  accountcode='" . $_REQUEST['c'] . "' order by sectionname asc")->queryAll();
+	// EDWIN: 27APR2021 Filter Out User Sections
+	$mysecs = Yii::app()->db->createCommand("SELECT distinct section,itemname from v_subsistence where section='" . section() . "' and budget='" . budget() . "' and  accountcode='" . $_REQUEST['c'] . "' order by sectionname asc")->queryAll();
 	echo "<h2> Details for " . $mysecs[0][itemname] . "</h2>";
 	foreach ($mysecs as $mysec) {
-		$cs = Yii::app()->db->createCommand("select * from v_subsistence where budget='" . user()->budget['id'] . "' and section='" . $mysec[section] . "' and accountcode='" . $_REQUEST['c'] . "'")->queryAll();
+		// EDWIN: $mysec[section] - Original Section Filter
+		// EDWIN: user()->budget['id'] - Original Budget Filter
+		$cs = Yii::app()->db->createCommand("select distinct * from v_subsistence where budget='" . budget() . "' and section='" . section() . "' and accountcode='" . $_REQUEST['c'] . "'")->queryAll();
 		echo "<h3>" . $cs[0][dept] . ": " . $cs[0][sectionname] . "</h3>";
 
 		echo "<div class='grid-view'><table class='items' style='border: 1px solid;max-width:100%'>";

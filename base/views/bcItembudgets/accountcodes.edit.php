@@ -182,13 +182,17 @@ if ($_REQUEST['print'] == 1) {
 ?>
 
 <?php
-if ($model && $_REQUEST['costcentre'] && $_REQUEST['accountcode'] && $_REQUEST['item']) {
+if ($model && $_REQUEST['item']) {
+	/*** EDWIN: 27APR2021 Original Block
+	$sql = "select distinct section,sectionname,dept,accountitem,itemname from v_bc_itembudgets where budget='" . budget() . "'  and item=" . $_REQUEST['item'] . ' order by dept,sectionname';
+	$rawData = Yii::app()->db->createCommand($sql)->queryAll();
+	 ***/
 	if (is_sat() || is_pbfo() || is_sys_admin()) {
-		$sql = "select distinct section,sectionname,dept from v_bc_itembudgets where budget='" . budget() . "'  and item=" . $_REQUEST['item'] . " order by dept,sectionname";
+		$sql = "select distinct section,sectionname,dept,accountitem,itemname from v_bc_itembudgets where budget='" . budget() . "'  and item=" . $_REQUEST['item'] . " order by dept,sectionname";
 	} elseif (is_dept_head()) {
-		$sql = "select distinct section,sectionname,dept from v_bc_itembudgets where dept='" . dept() . "' and budget='" . budget() . "'  and item=" . $_REQUEST['item'] . " order by dept,sectionname";
+		$sql = "select distinct section,sectionname,dept,accountitem,itemname from v_bc_itembudgets where dept='" . dept() . "' and budget='" . budget() . "'  and item=" . $_REQUEST['item'] . " order by dept,sectionname";
 	} else {
-		$sql = "select distinct section,sectionname,dept from v_bc_itembudgets where section='" . section() . "' and budget='" . budget() . "'  and item=" . $_REQUEST['item'] . " order by dept,sectionname";
+		$sql = "select distinct section,sectionname,dept,accountitem,itemname from v_bc_itembudgets where section='" . section() . "' and budget='" . budget() . "'  and item=" . $_REQUEST['item'] . " order by dept,sectionname";
 	}
 	//echo $sql;
 	$rawData = Yii::app()->db->createCommand($sql)->queryAll();
@@ -238,13 +242,17 @@ if ($model && $_REQUEST['costcentre'] && $_REQUEST['accountcode'] && $_REQUEST['
 	<?php } ?>
 
 	<?php
-	if ($model && $_REQUEST['costcentre'] && $_REQUEST['accountcode'] && !$_REQUEST['item']) {
+	if ($model && $_REQUEST['accountcode'] && !$_REQUEST['item']) {
+		/*** EDWIN: 27APR2021 Original Block
+		$sql = "select distinct section,sectionname,dept,accountitem from v_bc_itembudgets where budget='" . budget() . "'  and accountid ='" . $_REQUEST['accountcode'] . "' order by dept,sectionname";
+		$rawData = Yii::app()->db->createCommand($sql)->queryAll();
+		 ***/
 		if (is_sat() || is_pbfo() || is_sys_admin()) {
-			$sql = "select distinct section,sectionname,dept from v_bc_itembudgets where budget='" . budget() . "'  and accountcode=" . $_REQUEST['accountcode'] . " order by dept,sectionname";
+			$sql = "select distinct section,sectionname,dept,accountitem from v_bc_itembudgets where budget='" . budget() . "'  and accountcode=" . $_REQUEST['accountcode'] . " order by dept,sectionname";
 		} elseif (is_dept_head()) {
-			$sql = "select distinct section,sectionname,dept from v_bc_itembudgets where dept='" . dept() . "' and budget='" . budget() . "'  and accountcode=" . $_REQUEST['accountcode'] . " order by dept,sectionname";
+			$sql = "select distinct section,sectionname,dept,accountitem from v_bc_itembudgets where dept='" . dept() . "' and budget='" . budget() . "'  and accountcode=" . $_REQUEST['accountcode'] . " order by dept,sectionname";
 		} else {
-			$sql = "select distinct section,sectionname,dept from v_bc_itembudgets where section='" . section() . "' and budget='" . budget() . "'  and accountcode=" . $_REQUEST['accountcode'] . " order by dept,sectionname";
+			$sql = "select distinct section,sectionname,dept,accountitem from v_bc_itembudgets where section='" . section() . "' and budget='" . budget() . "'  and accountcode=" . $_REQUEST['accountcode'] . " order by dept,sectionname";
 		}
 		$rawData = Yii::app()->db->createCommand($sql)->queryAll();
 	?>
@@ -323,7 +331,11 @@ if ($model && $_REQUEST['costcentre'] && $_REQUEST['accountcode'] && $_REQUEST['
 
 		<?php
 		if ($model && $_REQUEST['costcentre'] && !$_REQUEST['item'] && !$_REQUEST['accountcode']) {
-			//echo "we";
+			/*** EDWIN: 27APR2021 Original Block
+			$sql = "select distinct section,sectionname,dept from v_bc_itembudgets where budget='" . budget() . "'  and accountcode like '" . $_REQUEST['costcentre'] . "%' ";
+			if ($_REQUEST['section']) 	$sql .= " and section=" . $_REQUEST['section'];
+			$rawData = Yii::app()->db->createCommand($sql)->queryAll();
+			 ***/
 			if (is_sat() || is_pbfo() || is_sys_admin()) {
 				$sql = "select distinct section,sectionname,dept from v_bc_itembudgets where budget='" . budget() . "'  and accountcode like '" . $_REQUEST['costcentre'] . "%' order by dept,sectionname";
 			} elseif (is_dept_head()) {
@@ -332,9 +344,6 @@ if ($model && $_REQUEST['costcentre'] && $_REQUEST['accountcode'] && $_REQUEST['
 				$sql = "select distinct section,sectionname,dept from v_bc_itembudgets where section='" . section() . "' and budget='" . budget() . "'  and accountcode like '" . $_REQUEST['costcentre'] . "%' order by dept,sectionname";
 			}
 			if ($_REQUEST['section']) 	$sql .= " and section=" . $_REQUEST['section'];
-			//$sql .=" order by dept,sectionname";
-			//echo $sql;
-			//exit;
 			$rawData = Yii::app()->db->createCommand($sql)->queryAll();
 		?>
 			<h3>Budget History for Cost Centre</h3>
